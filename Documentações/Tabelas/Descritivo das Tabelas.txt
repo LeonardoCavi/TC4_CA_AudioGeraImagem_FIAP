@@ -1,0 +1,38 @@
+Tabelas do projeto (Descritivo)
+
+__EFMigrationsHistory: tabela de controle do EFCore
+	MigrationId
+	ProductVersion
+
+------------------------
+
+Comandos.: Tabela responsável por armazenar o comando
+enviado pelo publicador e ir atualizando nos diferentes
+tipos de estados no consumidor (worker).
+	Id (uniqueidentifier) .: Identificar do comando (GUID).
+	UrlAudio (varchar(MAX)) .: URL do áudio armazenado no S3.
+	Transcricao (varchar(MAX)) .: Texto do áudio após ser
+transcrito pelo OpenAI.
+	UrlImagem (varchar(MAX)) .: URL da imagem armazenada no S3
+após ser criado pelo OpenAI.
+	InstanteCriacao (datetime2(7)) .: Coluna para registrar o inicio
+da publicação do Comando na fila.
+	InstanteAtualização (datetime2(7)) .: Coluna para atualizar a cada
+troca de estado na aplicação.
+	Descrição varchar(256).: Descrição fornecida na API quando é 
+solicitado o áudio para o usuário.
+
+------------------------
+
+ProcessamentoComandos.: Tabela responsável por armazenar todas as trocas de
+estados de um comando, data/hora do estado, 
+mensagens de erro e identificador do comando.
+	Id (uniqueidentifier) .: Identificar do processamento do comando (GUID).
+	Estado (varchar(20)) .: Armazena as trocas de estados do consumidor, que podem
+ser.: "Recebido, SalvandoAudio, GerandoTexto, 
+GerandoImagem, SalvadoImagem, Finalizado ou Falha".
+	InstanteCriacao (datetime2(7)).: Data de criação/atualização do comando.
+	MensagemErro (varchar(256)).: Caso tenha algum erro nos processamentos do comando,
+inserimos nessa coluna o motivo.
+	ComandoId (uniqueidentifier).: Identificador do comando.
+	

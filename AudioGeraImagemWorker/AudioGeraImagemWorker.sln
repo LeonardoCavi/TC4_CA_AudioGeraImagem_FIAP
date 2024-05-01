@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. WORKER", "1. WORKER", "{03BBB730-8985-43FF-ABB3-411281E3C0DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. APPLICATION", "2. APPLICATION", "{95920062-1673-4325-8541-087B4A864745}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. DOMAIN", "3. DOMAIN", "{D4C95C09-E09A-4AE6-8C15-3ADC50751F5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. INFRA", "4. INFRA", "{DF638C16-B024-4C30-B447-B82B98154358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Worker", "AudioGeraImagemWorker.Worker\AudioGeraImagemWorker.Worker.csproj", "{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Application", "AudioGeraImagemWorker.Application\AudioGeraImagemWorker.Application.csproj", "{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Domain", "AudioGeraImagemWorker.Domain\AudioGeraImagemWorker.Domain.csproj", "{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Infra", "AudioGeraImagemWorker.Infra\AudioGeraImagemWorker.Infra.csproj", "{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9} = {03BBB730-8985-43FF-ABB3-411281E3C0DA}
+		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B} = {95920062-1673-4325-8541-087B4A864745}
+		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B} = {D4C95C09-E09A-4AE6-8C15-3ADC50751F5A}
+		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9} = {DF638C16-B024-4C30-B447-B82B98154358}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35C4E5AC-3D2E-420E-9B68-834B31AEE674}
+	EndGlobalSection
+EndGlobal
