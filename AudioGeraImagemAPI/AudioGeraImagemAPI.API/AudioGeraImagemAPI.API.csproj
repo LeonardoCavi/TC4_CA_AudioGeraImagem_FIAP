@@ -25,6 +25,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\AudioGeraImagemAPI.Application\AudioGeraImagemAPI.Application.csproj" />
 		<ProjectReference Include="..\AudioGeraImagemAPI.Infra\AudioGeraImagemAPI.Infra.csproj" />
+		<ProjectReference Include="..\AudioGeraImagemAPI.UseCases\AudioGeraImagemAPI.UseCases.csproj" />
 	</ItemGroup>
 
 </Project>
