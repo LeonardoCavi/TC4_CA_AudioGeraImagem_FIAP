@@ -1,4 +1,6 @@
-﻿namespace AudioGeraImagemAPI.Domain.Entities
+﻿using AudioGeraImagemAPI.Domain.Enums;
+
+namespace AudioGeraImagemAPI.Domain.Entities
 {
     public class Comando : EntidadeBase
     {
@@ -9,5 +11,22 @@
         public DateTime InstanteCriacao { get; set; }
         public DateTime InstanteAtualizacao { get; set; }
         public List<ProcessamentoComando> ProcessamentosComandos { get; set; }
+
+        public Comando() { }
+
+        public Comando(string descricao)
+        {
+            Id = Guid.NewGuid();
+            Descricao = descricao;
+            InstanteCriacao = DateTime.Now;
+            ProcessamentosComandos = new()
+            {
+                new()
+                {
+                    Estado = EstadoComando.Recebido,
+                    InstanteCriacao = DateTime.Now
+                }
+            };
+        }
     }
 }

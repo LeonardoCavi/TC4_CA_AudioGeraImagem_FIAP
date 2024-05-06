@@ -2,13 +2,7 @@
 using AudioGeraImagemAPI.Domain.Interfaces.Repositories;
 using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
-using MassTransit;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AudioGeraImagemAPI.UseCases.Comandos.List
 {

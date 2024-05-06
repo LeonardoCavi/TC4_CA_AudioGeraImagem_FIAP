@@ -1,4 +1,4 @@
-﻿using AudioGeraImagemAPI.Application.ViewModels;
+﻿using AudioGeraImagemAPI.API.Models;
 using AudioGeraImagemAPI.UseCases.Comandos.Create;
 using AudioGeraImagemAPI.UseCases.Comandos.Get;
 using AudioGeraImagemAPI.UseCases.Comandos.List;
@@ -23,7 +23,7 @@ namespace AudioGeraImagemAPI.API.Controllers
         }
 
         [HttpPost("gerar-imagem")]
-        public async Task<IActionResult> GerarImagem([FromForm] GerarImagemViewModel gerarImagem)
+        public async Task<IActionResult> GerarImagem([FromForm] GerarImagemRequest gerarImagem)
         {
             try
             {

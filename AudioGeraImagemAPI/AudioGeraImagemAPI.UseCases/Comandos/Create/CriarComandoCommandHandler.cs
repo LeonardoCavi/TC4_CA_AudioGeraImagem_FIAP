@@ -1,8 +1,6 @@
 ﻿using AudioGeraImagem.Domain.Messages;
 using AudioGeraImagemAPI.Domain.Entities;
-using AudioGeraImagemAPI.Domain.Enums;
 using AudioGeraImagemAPI.Domain.Interfaces.Repositories;
-using AudioGeraImagemAPI.Domain.Utility;
 using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
 using MassTransit;
@@ -26,15 +24,14 @@ namespace AudioGeraImagemAPI.UseCases.Comandos.Create
 
         public async Task<ResultadoOperacao<Guid>> Handle(CriarComandoCommand request, CancellationToken cancellationToken)
         {
-            if (!RequisicaoValida(request))
+            if (!request.Valido())
                 return ResultadoOperacaoFactory.Criar(false, "Escreva uma descrição com até 256 caracteres e o arquivo deve ser .mp3", Guid.Empty);
 
-            var comando = CriarComando(request);
+            var comando = new Comando(request.Descricao);
 
-            using var stream = request.Arquivo.OpenReadStream();
+            var payload = ObterPayload(request);
 
-            var payload = ObterPayload(stream);
-            var mensagem = CriarMensagem(comando, payload);
+            var mensagem = new ComandoMessage(comando.Id, payload);
 
             await _repository.Inserir(comando);
 
@@ -43,51 +40,14 @@ namespace AudioGeraImagemAPI.UseCases.Comandos.Create
             return ResultadoOperacaoFactory.Criar(true, string.Empty, comando.Id);
         }
 
-        private bool RequisicaoValida(CriarComandoCommand request)
+        private byte[] ObterPayload(CriarComandoCommand request)
         {
-            if (request.Descricao.Length > 256)
-                return false;
-
-            if (!request.Arquivo.ContentType.Contains("audio/mpeg"))
-                return false;
-
-            return true;
-        }
-
-        private Comando CriarComando(CriarComandoCommand gerarImagem)
-        {
-            var comando = new Comando()
-            {
-                Id = Guid.NewGuid(),
-                Descricao = gerarImagem.Descricao,
-                InstanteCriacao = DateTime.Now,
-                ProcessamentosComandos = new()
-            };
-
-            comando.ProcessamentosComandos.Add(new()
-            {
-                Estado = EstadoComando.Recebido,
-                InstanteCriacao = DateTime.Now
-            });
-
-            return comando;
-        }
-
-        private byte[] ObterPayload(Stream stream)
-        {
+            using var stream = request.Arquivo.OpenReadStream();
             using var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
             var bytes = memoryStream.ToArray();
 
             return bytes;
-        }
-        private ComandoMessage CriarMensagem(Comando comando, byte[] payload)
-        {
-            return new()
-            {
-                ComandoId = comando.Id,
-                Payload = payload
-            };
         }
         private async Task PublicarMensagem(ComandoMessage mensagem)
         {

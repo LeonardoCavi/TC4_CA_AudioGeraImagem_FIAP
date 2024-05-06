@@ -3,11 +3,6 @@ using AudioGeraImagemAPI.Domain.Utility;
 using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AudioGeraImagemAPI.UseCases.Imagens.Get
 {
