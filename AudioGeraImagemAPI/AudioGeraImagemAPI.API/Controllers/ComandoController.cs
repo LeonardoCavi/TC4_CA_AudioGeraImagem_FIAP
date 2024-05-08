@@ -3,6 +3,7 @@ using AudioGeraImagemAPI.UseCases.Comandos.Create;
 using AudioGeraImagemAPI.UseCases.Comandos.Get;
 using AudioGeraImagemAPI.UseCases.Comandos.List;
 using AudioGeraImagemAPI.UseCases.Imagens.Get;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,8 +28,9 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                _logger.LogInformation($"[{ClassName}] - [GerarImagem] => Request.: {gerarImagem.Descricao} - {gerarImagem.Arquivo.FileName}");
-                var resultado = await _mediator.Send(new CriarComandoCommand() { Descricao = gerarImagem.Descricao, Arquivo = gerarImagem.Arquivo });
+                var command = new CriarComandoCommand(gerarImagem.Descricao, gerarImagem.Arquivo);
+                _logger.LogInformation($"[{ClassName}] - [GerarImagem] => Request.: {command}");
+                var resultado = await _mediator.Send(command);
 
                 if(resultado.Sucesso)
                     return Accepted(string.Empty, resultado.Objeto);
@@ -47,9 +49,9 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                _logger.LogInformation($"[{ClassName}] - [BuscarCriacoes] => Request.: {new { Busca = busca }}");
-
-                var resultado = await _mediator.Send(new ListarComandosQuery() { Busca = busca });
+                var query = new ListarComandosQuery(busca);
+                _logger.LogInformation($"[{ClassName}] - [BuscarCriacoes] => Request.: {query}");
+                var resultado = await _mediator.Send(query);
 
                 if (resultado.Sucesso)
                     return Ok(resultado.Objeto);
@@ -68,9 +70,9 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                _logger.LogInformation($"[{ClassName}] - [ObterCriacao] => Request.: {new { Id = id }}");
-
-                var resultado = await _mediator.Send(new ObterComandoQuery() { Id = id });
+                var query = new ObterComandoQuery(id);
+                _logger.LogInformation($"[{ClassName}] - [ObterCriacao] => Request.: {query}");
+                var resultado = await _mediator.Send(query);
 
                 if (resultado.Sucesso)
                     return Ok(resultado.Objeto);
@@ -89,9 +91,9 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                _logger.LogInformation($"[{ClassName}] - [ObterImagem] => Request.: {new { Id = id }}");
-
-                var resultado = await _mediator.Send(new ObterImagemQuery() { Id = id });
+                var query = new ObterImagemQuery(id);
+                _logger.LogInformation($"[{ClassName}] - [ObterImagem] => Request.: {query}");
+                var resultado = await _mediator.Send(query);
 
                 if (resultado.Sucesso)
                     return File(resultado.Objeto, "image/jpeg");

@@ -6,6 +6,12 @@ namespace AudioGeraImagemAPI.UseCases.Comandos.Create
 {
     public class CriarComandoCommand: IRequest<ResultadoOperacao<Guid>>
     {
+        public CriarComandoCommand(string descricao, IFormFile arquivo)
+        {
+            Descricao = descricao;
+            Arquivo = arquivo;
+        }
+
         public string Descricao { get; set; }
         public IFormFile Arquivo { get; set; }
 
@@ -19,5 +25,7 @@ namespace AudioGeraImagemAPI.UseCases.Comandos.Create
 
             return true;
         }
+
+        public override string ToString() => $"{Descricao} - {Arquivo.FileName}";
     }
 }
