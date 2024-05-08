@@ -76,7 +76,7 @@ disponibilizada para consumo.
 -- ➤ 1. Monitorar o tempo de processamento e estados das mensagens em diferentes momentos e condições para garantir que esteja dentro do limite aceitável.</br>
 -- ➤ 2. Realizar testes de integração com os serviços externos de armazenamento (Azure Blob) e de transcrição e geração de imagem.</br>
 
-<h4 align="left">➤ Comunicação por Mensageria</h4>
+<h4 align="left">➤ Armazenamento em Azure Blob Storage</h4>
 <h4 align="left">-➤ Critério</h4>
 -- ➤ 1. Os arquivos de áudio e imagens devem estar disponíveis para acesso e download a qualquer momento, com uma taxa de disponibilidade de pelo menos 99%.</br>
 -- ➤ 2. Os arquivos de áudio e vídeo serão armazenados em subpastas de áudios e imagens e nomeados com Id de criação mais sua respectiva extensão (.mp3 ou .jpeg).</br>
@@ -84,7 +84,7 @@ disponibilizada para consumo.
 -- ➤ 1. Monitorar a disponibilidade e a integridade dos arquivos armazenados na conta Azure Blob Storage e registrar qualquer ocorrência de falha ou inacessibilidade (Via ticket/suporte Microsoft).</br>
 -- ➤ 2. Realizar testes de integração para garantir que o projeto consegue buscar/obter o objeto e inserir/armazenar um novo.</br>
 
-<h4 align="left">➤ Comunicação por Mensageria</h4>
+<h4 align="left">➤ Armazenamento no Banco de Dados Relacional</h4>
 <h4 align="left">-➤ Critério</h4>
 -- ➤ 1. O banco de dados terá duas tabelas distintas, uma para armazenar as criações e outra para administração de estados e data/hora da mesma.</br>
 -- ➤ 2. O banco também irá conta com uma tabela destinada apenas para armazenar as versões e alterações da estrutura das tabelas do projeto que utiliza EF Core.</br>
