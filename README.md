@@ -12,6 +12,9 @@ disponibilizada para consumo.
 - ➤ AudioGeraImagemAPI</br>
 - ➤ AudioGeraImagemWorker</br>
 
+<h2 align="left">Diagrama do Projeto</h2>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Diagramas/Diagrama_integracoes.png"></img></br>
+
 <h2 align="left">Requisitos do Sistema do Projeto</h2>
 
 <h4 align="left">➤ Transcrição de Áudio</h4>
