@@ -1,22 +1,23 @@
 ﻿using AudioGeraImagem.Domain.Messages;
-using AudioGeraImagemWorker.Application.Interfaces;
+using AudioGeraImagemWorker.UseCases.Comandos.Processar;
 using MassTransit;
+using MediatR;
 
 namespace AudioGeraImagemWorker.Worker.Events
 {
     public class NovoComandoConsumer : IConsumer<ComandoMessage>
     {
-        private readonly IEventReceiver _eventReceiver;
+        private readonly IMediator _mediator;
 
-        public NovoComandoConsumer(IEventReceiver eventReceiver)
+        public NovoComandoConsumer(IMediator mediator)
         {
-            _eventReceiver = eventReceiver;
+            _mediator = mediator;
         }
 
         public async Task Consume(ConsumeContext<ComandoMessage> context)
         {
             var mensagem = context.Message;
-            await _eventReceiver.ReceberMensagem(mensagem);
+            await _mediator.Send(new ProcessarComandoCommand(mensagem.ComandoId, mensagem.Payload));
         }
     }
 }

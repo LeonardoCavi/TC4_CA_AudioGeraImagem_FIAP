@@ -1,32 +1,33 @@
-﻿using AudioGeraImagem.Domain.Entities;
-using AudioGeraImagem.Domain.Messages;
-using AudioGeraImagemWorker.Domain.Enums;
-using AudioGeraImagemWorker.Domain.Factories;
-using AudioGeraImagemWorker.Domain.Interfaces;
-using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
+﻿using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
 using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
+using AudioGeraImagemWorker.Domain.Interfaces;
 using AudioGeraImagemWorker.Domain.Utility;
+using MediatR;
 using Microsoft.Extensions.Logging;
+using AudioGeraImagemWorker.Domain.Enums;
+using AudioGeraImagem.Domain.Entities;
+using AudioGeraImagemWorker.Domain.Factories;
 
-namespace AudioGeraImagemWorker.Domain.Services
+namespace AudioGeraImagemWorker.UseCases.Comandos.Processar
 {
-    public class ComandoManager : IComandoManager
+    internal class ProcessarComandoCommandHandler : IRequestHandler<ProcessarComandoCommand>
     {
         private readonly HttpHelper _httpHelper;
         private readonly IComandoRepository _comandoRepository;
         private readonly IErroManager _erroManager;
         private readonly IBucketManager _bucketManager;
         private readonly IOpenAIVendor _openAIVendor;
-        private readonly ILogger<ComandoManager> _logger;
-        private readonly string _className = typeof(ComandoManager).Name;
+        private readonly ILogger<ProcessarComandoCommandHandler> _logger;
+        private readonly string _className = typeof(ProcessarComandoCommandHandler).Name;
 
-        public ComandoManager(
+        public ProcessarComandoCommandHandler(
             HttpHelper httpHelper,
             IComandoRepository comandoRepository,
             IErroManager erroManager,
             IBucketManager bucketManager,
             IOpenAIVendor openAIVendor,
-            ILogger<ComandoManager> logger)
+            ILogger<ProcessarComandoCommandHandler> logger,
+            string className)
         {
             _httpHelper = httpHelper;
             _comandoRepository = comandoRepository;
@@ -34,36 +35,27 @@ namespace AudioGeraImagemWorker.Domain.Services
             _bucketManager = bucketManager;
             _openAIVendor = openAIVendor;
             _logger = logger;
+            _className = className;
         }
 
-        public async Task ProcessarComando(ComandoMessage mensagem)
+        public async Task Handle(ProcessarComandoCommand request, CancellationToken cancellationToken)
         {
-            var comando = await _comandoRepository.Obter(mensagem.ComandoId);
-
-            if(comando is null)
-            {
-                _logger.LogWarning($"[{_className}] - [ProcessarComando] => Mensagem descartada, pois o comando de id '{mensagem.ComandoId}' não existe.");
-            }
-            else
-            {
-                if(comando.ProcessamentosComandos.Last()?.Estado is EstadoComando.Recebido)
-                    await AtualizarProcessamentoComando(comando);
-
-                await ExecutarComando(comando, mensagem.Payload);
-            }
-        }
-
-        public async Task ReprocessarComando(RetentativaComandoMessage mensagem)
-        {
-            var comando = await _comandoRepository.Obter(mensagem.ComandoId);
+            var comando = await _comandoRepository.Obter(request.ComandoId);
 
             if (comando is null)
             {
-                _logger.LogWarning($"[{_className}] - [ReprocessarComando] => Mensagem descartada, pois o comando de id '{mensagem.ComandoId}' não existe.");
+                _logger.LogWarning($"[{_className}] - [Handle] => Comando descartado, pois o comando de id '{request.ComandoId}' não existe.");
             }
+            else
+            {
+                if (comando.ProcessamentosComandos.Last()?.Estado is EstadoComando.Recebido)
+                    await AtualizarProcessamentoComando(comando);
 
-            await AtualizarComando(comando, mensagem.UltimoEstado);
-            await ExecutarComando(comando, mensagem.Payload);
+                if (request.Retentativa)
+                    await AtualizarComando(comando, request.UltimoEstado);
+
+                await ExecutarComando(comando, request.Payload);
+            }
         }
 
         private async Task ExecutarComando(Comando comando, byte[] payload = null)
@@ -161,7 +153,7 @@ namespace AudioGeraImagemWorker.Domain.Services
             {
                 _logger.LogError($"[{_className}] - [SalvarAudio] => Exception.: {ex.Message}");
                 throw;
-            }   
+            }
         }
 
         // 2. Salvando Audio >> Gerando Texto
