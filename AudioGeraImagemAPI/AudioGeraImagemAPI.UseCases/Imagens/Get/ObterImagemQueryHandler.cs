@@ -8,10 +8,10 @@ namespace AudioGeraImagemAPI.UseCases.Imagens.Get
 {
     public class ObterImagemQueryHandler : IRequestHandler<ObterImagemQuery, ResultadoOperacao<Stream>>
     {
-        private readonly IComandoRepository _repository;
+        private readonly ICriacaoRepository _repository;
         private readonly HttpHelper _httpHelper;
 
-        public ObterImagemQueryHandler(IComandoRepository repository, HttpHelper httpHelper)
+        public ObterImagemQueryHandler(ICriacaoRepository repository, HttpHelper httpHelper)
         {
             _repository = repository;
             _httpHelper = httpHelper;
@@ -19,15 +19,15 @@ namespace AudioGeraImagemAPI.UseCases.Imagens.Get
 
         public async Task<ResultadoOperacao<Stream>> Handle(ObterImagemQuery request, CancellationToken cancellationToken)
         {
-            var comando = await _repository.ObterComandoProcessamentos(request.Id);
+            var criacao = await _repository.ObterCriacaoProcessamentos(request.Id);
 
-            if (comando == null)
+            if (criacao == null)
                 return ResultadoOperacaoFactory.Criar(false, "Criação não encontrada.", Stream.Null);
 
-            if (!comando.ProcessamentosComandos.Any(x => x.Estado == Domain.Enums.EstadoComando.Finalizado))
-                return ResultadoOperacaoFactory.Criar(false, "Comando ainda está em processamento ou finalizou com falha.", Stream.Null);
+            if (!criacao.ProcessamentosCriacao.Any(x => x.Estado == Domain.Enums.EstadoProcessamento.Finalizado))
+                return ResultadoOperacaoFactory.Criar(false, "Criação ainda está em processamento ou finalizou com falha.", Stream.Null);
 
-            var bytes = await _httpHelper.GetBytes(comando.UrlImagem);
+            var bytes = await _httpHelper.GetBytes(criacao.UrlImagem);
 
             return ResultadoOperacaoFactory.Criar(true, string.Empty, ObterStream(bytes));
         }

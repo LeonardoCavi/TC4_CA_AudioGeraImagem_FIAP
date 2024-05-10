@@ -1,9 +1,8 @@
 ﻿using AudioGeraImagemAPI.API.Models;
-using AudioGeraImagemAPI.UseCases.Comandos.Create;
-using AudioGeraImagemAPI.UseCases.Comandos.Get;
-using AudioGeraImagemAPI.UseCases.Comandos.List;
+using AudioGeraImagemAPI.UseCases.Criacoes.Create;
+using AudioGeraImagemAPI.UseCases.Criacoes.Get;
+using AudioGeraImagemAPI.UseCases.Criacoes.List;
 using AudioGeraImagemAPI.UseCases.Imagens.Get;
-using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +10,13 @@ namespace AudioGeraImagemAPI.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ComandoController : ControllerBase
+    public class CriacaoController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ILogger<ComandoController> _logger;
-        private readonly string ClassName = typeof(ComandoController).Name;
+        private readonly ILogger<CriacaoController> _logger;
+        private readonly string ClassName = typeof(CriacaoController).Name;
 
-        public ComandoController(IMediator mediator, ILogger<ComandoController> logger)
+        public CriacaoController(IMediator mediator, ILogger<CriacaoController> logger)
         {
             _mediator = mediator;
             _logger = logger;
@@ -28,7 +27,7 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                var command = new CriarComandoCommand(gerarImagem.Descricao, gerarImagem.Arquivo);
+                var command = new CriarCriacaoCommand(gerarImagem.Descricao, gerarImagem.Arquivo);
                 _logger.LogInformation($"[{ClassName}] - [GerarImagem] => Request.: {command}");
                 var resultado = await _mediator.Send(command);
 
@@ -49,7 +48,7 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                var query = new ListarComandosQuery(busca);
+                var query = new ListarCriacoesQuery(busca);
                 _logger.LogInformation($"[{ClassName}] - [BuscarCriacoes] => Request.: {query}");
                 var resultado = await _mediator.Send(query);
 
@@ -70,7 +69,7 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                var query = new ObterComandoQuery(id);
+                var query = new ObterCriacaoQuery(id);
                 _logger.LogInformation($"[{ClassName}] - [ObterCriacao] => Request.: {query}");
                 var resultado = await _mediator.Send(query);
 

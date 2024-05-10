@@ -41,15 +41,11 @@ namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
             }
             else
             {
-                EstadoProcessamento novoEstado = default;
-
                 if (criacao.ProcessamentosCriacao.Last()?.Estado is EstadoProcessamento.Recebido)
-                    novoEstado = EstadoProcessamento.SalvandoAudio;
+                    await AtualizarCriacao(criacao, EstadoProcessamento.SalvandoAudio);
 
                 if (request.Retentativa)
-                    novoEstado = request.UltimoEstado;
-
-                await AtualizarCriacao(criacao, novoEstado);
+                    await AtualizarCriacao(criacao, request.UltimoEstado);
 
                 await ExecutarCriacao(criacao, request.Payload);
             }

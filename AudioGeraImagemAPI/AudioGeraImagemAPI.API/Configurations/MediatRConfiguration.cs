@@ -1,4 +1,4 @@
-﻿using AudioGeraImagemAPI.UseCases.Comandos.Create;
+﻿using AudioGeraImagemAPI.UseCases.Criacoes.Create;
 
 namespace AudioGeraImagemAPI.API.Configurations
 {
@@ -8,7 +8,7 @@ namespace AudioGeraImagemAPI.API.Configurations
         {
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssemblies(typeof(CriarComandoCommand).Assembly);
+                cfg.RegisterServicesFromAssemblies(typeof(CriarCriacaoCommand).Assembly);
             });
         }
     }

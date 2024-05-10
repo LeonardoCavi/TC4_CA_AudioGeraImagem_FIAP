@@ -8,7 +8,7 @@ namespace AudioGeraImagemAPI.API.Configurations
     {
         public static void AddDepencyInjection(this IServiceCollection services)
         {
-            services.AddScoped<IComandoRepository, ComandoRepository>();
+            services.AddScoped<ICriacaoRepository, CriacaoRepository>();
             services.AddScoped<HttpHelper>();
         }
     }

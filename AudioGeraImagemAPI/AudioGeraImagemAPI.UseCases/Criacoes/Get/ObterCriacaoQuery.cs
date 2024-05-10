@@ -2,11 +2,11 @@
 using MediatR;
 using System.Text.Json;
 
-namespace AudioGeraImagemAPI.UseCases.Comandos.Get
+namespace AudioGeraImagemAPI.UseCases.Criacoes.Get
 {
-    public class ObterComandoQuery: IRequest<ResultadoOperacao<ComandoDTO>>
+    public class ObterCriacaoQuery: IRequest<ResultadoOperacao<CriacaoDTO>>
     {
-        public ObterComandoQuery(string id)
+        public ObterCriacaoQuery(string id)
         {
             Id = id;
         }

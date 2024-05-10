@@ -2,7 +2,7 @@
 
 namespace AudioGeraImagemAPI.Domain.Entities
 {
-    public class Comando : EntidadeBase
+    public class Criacao : EntidadeBase
     {
         public string Descricao { get; set; }
         public string UrlAudio { get; set; }
@@ -10,20 +10,20 @@ namespace AudioGeraImagemAPI.Domain.Entities
         public string UrlImagem { get; set; }
         public DateTime InstanteCriacao { get; set; }
         public DateTime InstanteAtualizacao { get; set; }
-        public List<ProcessamentoComando> ProcessamentosComandos { get; set; }
+        public List<ProcessamentoCriacao> ProcessamentosCriacao { get; set; }
 
-        public Comando() { }
+        public Criacao() { }
 
-        public Comando(string descricao)
+        public Criacao(string descricao)
         {
             Id = Guid.NewGuid();
             Descricao = descricao;
             InstanteCriacao = DateTime.Now;
-            ProcessamentosComandos = new()
+            ProcessamentosCriacao = new()
             {
                 new()
                 {
-                    Estado = EstadoComando.Recebido,
+                    Estado = EstadoProcessamento.Recebido,
                     InstanteCriacao = DateTime.Now
                 }
             };

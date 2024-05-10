@@ -1,8 +1,8 @@
 ﻿using AudioGeraImagemAPI.Domain.Entities;
 
-namespace AudioGeraImagemAPI.UseCases.Comandos
+namespace AudioGeraImagemAPI.UseCases.Criacoes
 {
-    public class ComandoDTO
+    public class CriacaoDTO
     {
         public Guid Id { get; set; }
         public string Descricao { get; set; }
@@ -11,6 +11,6 @@ namespace AudioGeraImagemAPI.UseCases.Comandos
         public string UrlImagem { get; set; }
         public DateTime InstanteCriacao { get; set; }
         public DateTime InstanteAtualizacao { get; set; }
-        public List<ProcessamentoComando> ProcessamentosComandos { get; set; }
+        public List<ProcessamentoCriacao> ProcessamentosCriacao { get; set; }
     }
 }

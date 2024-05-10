@@ -3,11 +3,11 @@ using MediatR;
 using System.Text.Json;
 
 
-namespace AudioGeraImagemAPI.UseCases.Comandos.List
+namespace AudioGeraImagemAPI.UseCases.Criacoes.List
 {
-    public class ListarComandosQuery : IRequest<ResultadoOperacao<IEnumerable<ListarComandosDTO>>>
+    public class ListarCriacoesQuery : IRequest<ResultadoOperacao<IEnumerable<ListarCriacoesDTO>>>
     {
-        public ListarComandosQuery(string busca)
+        public ListarCriacoesQuery(string busca)
         {
             Busca = busca;
         }

@@ -5,32 +5,32 @@ using System.Linq.Expressions;
 
 namespace AudioGeraImagemAPI.Infra.Repositories
 {
-    public class ComandoRepository : EntidadeBaseRepository<Comando>, IComandoRepository
+    public class CriacaoRepository : EntidadeBaseRepository<Criacao>, ICriacaoRepository
     {
-        public ComandoRepository(ApplicationDbContext context) : base(context)
+        public CriacaoRepository(ApplicationDbContext context) : base(context)
         {
         }
 
-        public async Task<Comando> ObterComandoProcessamentos(string id)
+        public async Task<Criacao> ObterCriacaoProcessamentos(string id)
         {
             return await _dbSet
-                .Include(x => x.ProcessamentosComandos)
+                .Include(x => x.ProcessamentosCriacao)
                 .Where(x => x.Id.ToString() == id)
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<ICollection<Comando>> ObterComandosProcessamentos()
+        public async Task<ICollection<Criacao>> ObterCriacoesProcessamentos()
         {
             return await _dbSet
-                .Include(x => x.ProcessamentosComandos)
+                .Include(x => x.ProcessamentosCriacao)
                 .Take(50)
                 .ToListAsync();
         }
 
-        public async Task<ICollection<Comando>> Buscar(Expression<Func<Comando, bool>> predicate)
+        public async Task<ICollection<Criacao>> Buscar(Expression<Func<Criacao, bool>> predicate)
         {
             return await _dbSet
-                .Include(x => x.ProcessamentosComandos)
+                .Include(x => x.ProcessamentosCriacao)
                 .Where(predicate)
                 .Take(50)
                 .ToListAsync();
