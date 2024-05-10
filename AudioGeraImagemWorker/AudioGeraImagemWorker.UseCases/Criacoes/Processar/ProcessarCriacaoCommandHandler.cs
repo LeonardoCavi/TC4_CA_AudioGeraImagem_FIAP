@@ -1,39 +1,33 @@
-﻿using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
-using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
-using AudioGeraImagemWorker.Domain.Interfaces;
-using AudioGeraImagemWorker.Domain.Utility;
+﻿using AudioGeraImagem.Domain.Entities;
+using AudioGeraImagem.Domain.Messages;
+using AudioGeraImagemWorker.Domain.DTOs;
+using AudioGeraImagemWorker.Domain.Entities;
+using AudioGeraImagemWorker.Domain.Enums;
+using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
+using AudioGeraImagemWorker.Domain.Interfaces.Services;
+using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using AudioGeraImagemWorker.Domain.Enums;
-using AudioGeraImagem.Domain.Entities;
-using AudioGeraImagemWorker.Domain.Interfaces.Utility;
-using AudioGeraImagemWorker.Domain.Entities;
 
 namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
 {
     internal class ProcessarCriacaoCommandHandler : IRequestHandler<ProcessarCriacaoCommand>
     {
-        private readonly IHttpHelper _httpHelper;
-        private readonly ICriacaoRepository _criacaoRepository;
-        private readonly IErroManager _erroManager;
-        private readonly IBucketManager _bucketManager;
-        private readonly IOpenAIVendor _openAIVendor;
-        private readonly ILogger<ProcessarCriacaoCommandHandler> _logger;
         private readonly string _className = typeof(ProcessarCriacaoCommandHandler).Name;
+        private readonly ILogger<ProcessarCriacaoCommandHandler> _logger;
+        private readonly ICriacaoRepository _criacaoRepository;
+        private readonly IProcessamentoHandler _processamentoHandler;
+        private readonly IMessageScheduler _messageScheduler;
 
         public ProcessarCriacaoCommandHandler(
-            IHttpHelper httpHelper,
+            ILogger<ProcessarCriacaoCommandHandler> logger,
             ICriacaoRepository criacaoRepository,
-            IErroManager erroManager,
-            IBucketManager bucketManager,
-            IOpenAIVendor openAIVendor,
-            ILogger<ProcessarCriacaoCommandHandler> logger)
+            IProcessamentoHandler processamentoHandler,
+            IMessageScheduler messageScheduler)
         {
-            _httpHelper = httpHelper;
+            _processamentoHandler = processamentoHandler;
             _criacaoRepository = criacaoRepository;
-            _erroManager = erroManager;
-            _bucketManager = bucketManager;
-            _openAIVendor = openAIVendor;
+            _messageScheduler = messageScheduler;
             _logger = logger;
         }
 
@@ -47,86 +41,46 @@ namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
             }
             else
             {
+                EstadoProcessamento novoEstado = default;
+
                 if (criacao.ProcessamentosCriacao.Last()?.Estado is EstadoProcessamento.Recebido)
-                    await AtualizarProcessamentoCriacao(criacao);
+                    novoEstado = EstadoProcessamento.SalvandoAudio;
 
                 if (request.Retentativa)
-                    await AtualizarCriacao(criacao, request.UltimoEstado);
+                    novoEstado = request.UltimoEstado;
+
+                await AtualizarCriacao(criacao, novoEstado);
 
                 await ExecutarCriacao(criacao, request.Payload);
             }
         }
 
-        private async Task ExecutarCriacao(Criacao criacao, byte[] payload = null)
+        private async Task ExecutarCriacao(Criacao criacao, byte[] payload)
         {
-            var ultimoProcessamento = criacao.ProcessamentosCriacao.LastOrDefault();
-
             try
             {
-                switch (ultimoProcessamento.Estado)
-                {
-                    case EstadoProcessamento.SalvandoAudio:
-                        await SalvarAudio(criacao, payload);
-                        break;
-
-                    case EstadoProcessamento.GerandoTexto:
-                        await GerarTexto(criacao);
-                        break;
-
-                    case EstadoProcessamento.GerandoImagem:
-                        await GerarImagem(criacao);
-                        break;
-
-                    case EstadoProcessamento.SalvadoImagem:
-                        await SalvarImagem(criacao);
-                        break;
-
-                    case EstadoProcessamento.Finalizado:
-                        await Finalizar(criacao);
-                        return;
-                }
-
-                await AtualizarProcessamentoCriacao(criacao);
-                await ExecutarCriacao(criacao, payload);
+                var comando = new Comando(criacao, payload);
+                await _processamentoHandler.ExecutarEtapa(comando);
             }
             catch (Exception ex)
             {
+                var ultimoProcessamento = criacao.ProcessamentosCriacao.Last();
                 ultimoProcessamento.MensagemErro = ex.Message;
-                await _erroManager.TratarErro(criacao, ultimoProcessamento.Estado, payload);
-                await _criacaoRepository.Atualizar(criacao);
+                await TratarErro(criacao, ultimoProcessamento.Estado, payload);
             }
         }
 
-        private async Task AtualizarProcessamentoCriacao(Criacao criacao)
+        private async Task TratarErro(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload)
         {
-            var ultimoProcessamento = criacao.ProcessamentosCriacao.LastOrDefault();
+            var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
 
-            EstadoProcessamento novoEstadoCriacao = default;
-
-            switch (ultimoProcessamento.Estado)
+            if (ultimosProcessamentos.Count() == 3)
+                await AtualizarCriacao(criacao, EstadoProcessamento.Falha);
+            else
             {
-                case EstadoProcessamento.Recebido:
-                    novoEstadoCriacao = EstadoProcessamento.SalvandoAudio;
-                    break;
-
-                case EstadoProcessamento.SalvandoAudio:
-                    novoEstadoCriacao = EstadoProcessamento.GerandoTexto;
-                    break;
-
-                case EstadoProcessamento.GerandoTexto:
-                    novoEstadoCriacao = EstadoProcessamento.GerandoImagem;
-                    break;
-
-                case EstadoProcessamento.GerandoImagem:
-                    novoEstadoCriacao = EstadoProcessamento.SalvadoImagem;
-                    break;
-
-                case EstadoProcessamento.SalvadoImagem:
-                    novoEstadoCriacao = EstadoProcessamento.Finalizado;
-                    break;
-            }
-
-            await AtualizarCriacao(criacao, novoEstadoCriacao);
+                var mensagem = new RetentativaCriacaoMessage(criacao.Id, ultimoEstado, payload);
+                await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
+            }       
         }
 
         private async Task AtualizarCriacao(Criacao criacao, EstadoProcessamento novoEstado)
@@ -137,84 +91,5 @@ namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
 
             await _criacaoRepository.Atualizar(criacao);
         }
-
-        #region [ Tratamentos dos Estados dos Criacoes ]
-
-        // 1. Estado Recebido >> Salvando Audio
-        private async Task SalvarAudio(Criacao criacao, byte[] payload = null)
-        {
-            try
-            {
-                var fileName = string.Concat("audios/", criacao.Id.ToString(), ".mp3");
-                criacao.UrlAudio = await _bucketManager.ArmazenarObjeto(payload, fileName);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[{_className}] - [SalvarAudio] => Exception.: {ex.Message}");
-                throw;
-            }
-        }
-
-        // 2. Salvando Audio >> Gerando Texto
-        private async Task GerarTexto(Criacao criacao)
-        {
-            try
-            {
-                var bytes = await _httpHelper.GetBytes(criacao.UrlAudio);
-                criacao.Transcricao = await _openAIVendor.GerarTranscricao(bytes);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[{_className}] - [GerarTexto] => Exception.: {ex.Message}");
-                throw;
-            }
-        }
-
-        // 3. Salvando Texto >> Gerando Imagem
-        private async Task GerarImagem(Criacao criacao)
-        {
-            try
-            {
-                criacao.UrlImagem = await _openAIVendor.GerarImagem(criacao.Transcricao);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[{_className}] - [GerarImagem] => Exception.: {ex.Message}");
-                throw;
-            }
-        }
-
-        // 4. Gerando Imagem >> Salvado Imagem
-        private async Task SalvarImagem(Criacao criacao)
-        {
-            try
-            {
-                var bytes = await _httpHelper.GetBytes(criacao.UrlImagem);
-                var fileName = string.Concat("imagens/", criacao.Id.ToString(), ".jpeg");
-                var urlImagem = await _bucketManager.ArmazenarObjeto(bytes, fileName);
-                criacao.UrlImagem = urlImagem;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[{_className}] - [SalvarImagem] => Exception.: {ex.Message}");
-                throw;
-            }
-        }
-
-        // 5. Salvando Imagem >> Finalizado
-        private async Task Finalizar(Criacao criacao)
-        {
-            try
-            {
-                await _criacaoRepository.Atualizar(criacao);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[{_className}] - [Finalizar] => Exception.: {ex.Message}");
-                throw;
-            }
-        }
-
-        #endregion
     }
 }

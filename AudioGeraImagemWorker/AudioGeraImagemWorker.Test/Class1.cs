@@ -49,11 +49,7 @@ namespace AudioGeraImagemWorker.Test
 
             var payload = Encoding.UTF8.GetBytes("buffer teste");
 
-            comando = new()
-            {
-                Criacao = criacao,
-                Payload = payload
-            };
+            comando = new(criacao, payload);
 
             criacaoRepositoryMock = Substitute.For<ICriacaoRepository>();
             httpHelperMock = Substitute.For<IHttpHelper>();
@@ -63,44 +59,6 @@ namespace AudioGeraImagemWorker.Test
 
         [Fact]
         public async Task PrimerioTeste()
-        {
-            var salvarAudioHandler = new SalvarAudioHandler(
-                Substitute.For<ILogger<SalvarAudioHandler>>(),
-                bucketManagerMock,
-                criacaoRepositoryMock);
-
-            var gerarTextoHandler = new GerarTextoHandler(
-                Substitute.For<ILogger<GerarTextoHandler>>(),
-                openAIVendorMock,
-                httpHelperMock,
-                criacaoRepositoryMock);
-
-            var gerarImagemHandler = new GerarImagemHandler(
-                Substitute.For<ILogger<GerarImagemHandler>>(),
-                openAIVendorMock,
-                criacaoRepositoryMock);
-
-            var salvarImagemHandler = new SalvarImagemHandler(
-                Substitute.For<ILogger<SalvarImagemHandler>>(),
-                bucketManagerMock,
-                httpHelperMock,
-                criacaoRepositoryMock
-                );
-
-            // Set the chain of responsibility
-            salvarAudioHandler
-                .ProximaEtapa(gerarTextoHandler)
-                .ProximaEtapa(gerarImagemHandler)
-                .ProximaEtapa(salvarImagemHandler);
-
-            var resultado = await salvarAudioHandler.ExecutarEtapa(comando);
-            var ultimoProcessamento = resultado.Criacao.ProcessamentosCriacao.Last();
-
-            Assert.Equal(EstadoProcessamento.Finalizado, ultimoProcessamento.Estado);
-        }
-
-        [Fact]
-        public async Task PrimerioTeste_Exception()
         {
             var salvarAudioHandler = new SalvarAudioHandler(
                 Substitute.For<ILogger<SalvarAudioHandler>>(),

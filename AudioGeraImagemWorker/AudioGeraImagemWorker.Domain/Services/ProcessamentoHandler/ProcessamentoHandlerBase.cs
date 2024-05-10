@@ -2,8 +2,8 @@
 using AudioGeraImagemWorker.Domain.DTOs;
 using AudioGeraImagemWorker.Domain.Entities;
 using AudioGeraImagemWorker.Domain.Enums;
-using AudioGeraImagemWorker.Domain.Interfaces.ProcessamentoHandler;
 using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
+using AudioGeraImagemWorker.Domain.Interfaces.Services;
 
 namespace AudioGeraImagemWorker.Domain.Services.ProcessamentoHandler
 {

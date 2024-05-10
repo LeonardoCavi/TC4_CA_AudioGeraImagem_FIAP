@@ -24,6 +24,8 @@ var hostBuilder = Host.CreateDefaultBuilder(args)
         services.AddSerilogConfiguration(configuration);
         services.AddBusConfiguration(configuration);
         services.AddDbContextConfiguration(configuration);
+        services.AddMediatRConfiguration();
+        services.AddChainConfiguration();
         services.AddHostedService<Worker>();
     });
 

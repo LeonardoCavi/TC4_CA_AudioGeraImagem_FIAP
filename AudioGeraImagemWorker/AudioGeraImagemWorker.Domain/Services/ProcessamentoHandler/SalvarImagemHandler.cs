@@ -1,5 +1,4 @@
-﻿using AudioGeraImagem.Domain.Entities;
-using AudioGeraImagemWorker.Domain.DTOs;
+﻿using AudioGeraImagemWorker.Domain.DTOs;
 using AudioGeraImagemWorker.Domain.Entities;
 using AudioGeraImagemWorker.Domain.Enums;
 using AudioGeraImagemWorker.Domain.Interfaces.Repositories;

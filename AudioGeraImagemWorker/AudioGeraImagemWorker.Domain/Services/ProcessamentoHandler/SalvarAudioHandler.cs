@@ -1,11 +1,9 @@
-﻿using AudioGeraImagem.Domain.Entities;
-using AudioGeraImagemWorker.Domain.DTOs;
+﻿using AudioGeraImagemWorker.Domain.DTOs;
 using AudioGeraImagemWorker.Domain.Entities;
 using AudioGeraImagemWorker.Domain.Enums;
 using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
 using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
 using Microsoft.Extensions.Logging;
-using System.Text;
 
 namespace AudioGeraImagemWorker.Domain.Services.ProcessamentoHandler
 {

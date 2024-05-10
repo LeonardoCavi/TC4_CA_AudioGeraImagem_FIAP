@@ -1,6 +1,6 @@
 ﻿using AudioGeraImagemWorker.Domain.DTOs;
 
-namespace AudioGeraImagemWorker.Domain.Interfaces.ProcessamentoHandler
+namespace AudioGeraImagemWorker.Domain.Interfaces.Services
 {
     public interface IProcessamentoHandler
     {

@@ -1,4 +1,5 @@
-﻿using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
+﻿using AudioGeraImagemWorker.Domain.Interfaces.Utility;
+using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
 using AudioGeraImagemWorker.Domain.Utility;
 using AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI;
 using AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response;
@@ -8,10 +9,10 @@ namespace AudioGeraImagemWorker.Infra.Vendor
 {
     public class OpenAIVendor : IOpenAIVendor
     {
-        private readonly HttpHelper _httpHelper;
+        private readonly IHttpHelper _httpHelper;
         private readonly OpenAIParameters _parameters;
 
-        public OpenAIVendor(HttpHelper httpHelper,
+        public OpenAIVendor(IHttpHelper httpHelper,
                             OpenAIParameters parameters)
         {
             _httpHelper = httpHelper;
