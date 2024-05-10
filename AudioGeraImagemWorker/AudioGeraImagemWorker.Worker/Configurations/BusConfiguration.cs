@@ -1,6 +1,5 @@
 ﻿using AudioGeraImagemWorker.Worker.Events;
 using MassTransit;
-using Quartz;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
@@ -32,19 +31,19 @@ namespace AudioGeraImagemWorker.Worker.Configurations
 
                     cfg.ReceiveEndpoint(fila, e =>
                     {
-                        e.ConfigureConsumer<NovoComandoConsumer>(context);
+                        e.ConfigureConsumer<NovaCriacaoConsumer>(context);
                     });
 
                     cfg.ReceiveEndpoint(filaRetentativa, e =>
                     {
-                        e.ConfigureConsumer<RetentativaComandoConsumer>(context);
+                        e.ConfigureConsumer<RetentativaCriacaoConsumer>(context);
                     });
 
                     cfg.ConfigureEndpoints(context);
                 });
 
-                x.AddConsumer<NovoComandoConsumer>();
-                x.AddConsumer<RetentativaComandoConsumer>();
+                x.AddConsumer<NovaCriacaoConsumer>();
+                x.AddConsumer<RetentativaCriacaoConsumer>();
             });
         }
     }

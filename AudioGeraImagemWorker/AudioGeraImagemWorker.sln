@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.Infra", "AudioGeraImagemWorker.Infra\AudioGeraImagemWorker.Infra.csproj", "{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.UseCases", "AudioGeraImagemWorker.UseCases\AudioGeraImagemWorker.UseCases.csproj", "{7971074D-A93D-450E-AD9B-046DD5216E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.UseCases", "AudioGeraImagemWorker.UseCases\AudioGeraImagemWorker.UseCases.csproj", "{7971074D-A93D-450E-AD9B-046DD5216E39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. TEST", "5. TEST", "{51522FC1-8222-4FDA-8F37-E3AE8E3AC60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Test", "AudioGeraImagemWorker.Test\AudioGeraImagemWorker.Test.csproj", "{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{7971074D-A93D-450E-AD9B-046DD5216E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7971074D-A93D-450E-AD9B-046DD5216E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7971074D-A93D-450E-AD9B-046DD5216E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B} = {D4C95C09-E09A-4AE6-8C15-3ADC50751F5A}
 		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9} = {DF638C16-B024-4C30-B447-B82B98154358}
 		{7971074D-A93D-450E-AD9B-046DD5216E39} = {95920062-1673-4325-8541-087B4A864745}
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B} = {51522FC1-8222-4FDA-8F37-E3AE8E3AC60C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35C4E5AC-3D2E-420E-9B68-834B31AEE674}

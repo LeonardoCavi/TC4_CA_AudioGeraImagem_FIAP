@@ -1,4 +1,4 @@
-﻿using AudioGeraImagemWorker.UseCases.Comandos.Processar;
+﻿using AudioGeraImagemWorker.UseCases.Criacoes.Processar;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
@@ -8,7 +8,7 @@ namespace AudioGeraImagemWorker.Worker.Configurations
         {
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssemblies(typeof(ProcessarComandoCommand).Assembly);
+                cfg.RegisterServicesFromAssemblies(typeof(ProcessarCriacaoCommand).Assembly);
             });
         }
     }

@@ -1,8 +1,8 @@
 ﻿namespace AudioGeraImagem.Domain.Messages
 {
-    public class ComandoMessage
+    public class CriacaoMessage
     {
-        public Guid ComandoId { get; set; }
+        public Guid CriacaoId { get; set; }
         public byte[] Payload { get; set; }
     }
 }

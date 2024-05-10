@@ -1,6 +1,6 @@
 ﻿namespace AudioGeraImagemWorker.Domain.Enums
 {
-    public enum EstadoComando
+    public enum EstadoProcessamento
     {
         Recebido,
         SalvandoAudio,

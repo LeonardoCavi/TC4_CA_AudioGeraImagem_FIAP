@@ -1,15 +1,14 @@
 ﻿using AudioGeraImagem.Domain.Entities;
-using AudioGeraImagemWorker.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AudioGeraImagemWorker.Infra.Configurations
 {
-    public class ComandoConfiguration : IEntityTypeConfiguration<Comando>
+    public class CriacaoConfiguration : IEntityTypeConfiguration<Criacao>
     {
-        public void Configure(EntityTypeBuilder<Comando> builder)
+        public void Configure(EntityTypeBuilder<Criacao> builder)
         {
-            builder.ToTable("Comandos");
+            builder.ToTable("Criacao");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Descricao)
                 .HasColumnType("VARCHAR(256)");
@@ -24,15 +23,15 @@ namespace AudioGeraImagemWorker.Infra.Configurations
             builder.Property(x => x.UrlImagem)
                 .HasColumnType("VARCHAR(MAX)");
 
-            builder.OwnsMany(x => x.ProcessamentosComandos, procesamentoComando =>
+            builder.OwnsMany(x => x.ProcessamentosCriacao, processamentoCriacao =>
             {
-                procesamentoComando.ToTable("ProcessamentoComandos");
-                procesamentoComando.HasKey(x => x.Id);
-                procesamentoComando.Property(x => x.Estado).HasConversion<string>()
+                processamentoCriacao.ToTable("ProcessamentosCriacao");
+                processamentoCriacao.HasKey(x => x.Id);
+                processamentoCriacao.Property(x => x.Estado).HasConversion<string>()
                     .HasColumnType("VARCHAR(20)");
-                procesamentoComando.Property(x => x.InstanteCriacao)
+                processamentoCriacao.Property(x => x.InstanteCriacao)
                     .HasColumnType("DATETIME2");
-                procesamentoComando.Property(x => x.MensagemErro)
+                processamentoCriacao.Property(x => x.MensagemErro)
                     .HasColumnType("VARCHAR(256)");
             });
         }

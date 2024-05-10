@@ -1,10 +1,8 @@
 ﻿using AudioGeraImagemWorker.Domain.Entities;
-using MassTransit;
 
 namespace AudioGeraImagem.Domain.Entities
 {
-    [EntityName("Comando")]
-    public class Comando : EntidadeBase
+    public class Criacao : EntidadeBase
     {
         public string Descricao { get; set; }
         public string UrlAudio { get; set; }
@@ -12,6 +10,6 @@ namespace AudioGeraImagem.Domain.Entities
         public string UrlImagem { get; set; }
         public DateTime InstanteCriacao { get; set; }
         public DateTime InstanteAtualizacao { get; set; }
-        public List<ProcessamentoComando> ProcessamentosComandos { get; set; }
+        public List<ProcessamentoCriacao> ProcessamentosCriacao { get; set; }
     }
 }

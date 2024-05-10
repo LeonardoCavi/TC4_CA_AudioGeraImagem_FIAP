@@ -4,9 +4,9 @@ using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
 
 namespace AudioGeraImagemWorker.Infra.Repositories
 {
-    public class ComandoRepository : EntidadeBaseRepository<Comando>, IComandoRepository
+    public class CriacaoRepository : EntidadeBaseRepository<Criacao>, ICriacaoRepository
     {
-        public ComandoRepository(ApplicationDbContext context) : base(context)
+        public CriacaoRepository(ApplicationDbContext context) : base(context)
         {
         }
     }

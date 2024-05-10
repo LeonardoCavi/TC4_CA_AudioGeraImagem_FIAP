@@ -6,6 +6,6 @@ namespace AudioGeraImagemWorker.Domain.Interfaces
 {
     public interface IErroManager
     {
-        Task TratarErro(Comando comando, EstadoComando ultimoEstado, byte[] payload);
+        Task TratarErro(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload);
     }
 }

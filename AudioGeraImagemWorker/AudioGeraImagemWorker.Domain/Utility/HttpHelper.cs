@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AudioGeraImagemWorker.Domain.Interfaces.Utility;
+using Microsoft.Extensions.Logging;
 using Polly;
 using System.Net;
 using System.Text;
@@ -28,7 +29,7 @@ namespace AudioGeraImagemWorker.Domain.Utility
         public string Received { get; set; }
     }
 
-    public class HttpHelper
+    public class HttpHelper : IHttpHelper
     {
         private readonly ILogger<HttpHelper> _logger;
         private readonly string className = typeof(HttpHelper).Name;

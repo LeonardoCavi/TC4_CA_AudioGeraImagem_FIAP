@@ -1,7 +1,7 @@
 ﻿using AudioGeraImagem.Domain.Entities;
 using AudioGeraImagem.Domain.Messages;
+using AudioGeraImagemWorker.Domain.Entities;
 using AudioGeraImagemWorker.Domain.Enums;
-using AudioGeraImagemWorker.Domain.Factories;
 using AudioGeraImagemWorker.Domain.Interfaces;
 using MassTransit;
 
@@ -16,33 +16,33 @@ namespace AudioGeraImagemWorker.Domain.Services
             _messageScheduler = messageScheduler;
         }
 
-        public async Task TratarErro(Comando comando, EstadoComando ultimoEstado, byte[] payload)
+        public async Task TratarErro(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload)
         {
-            var ultimosProcessamentos = comando.ProcessamentosComandos.Where(x => x.Estado == ultimoEstado);
+            var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
 
             if (ultimosProcessamentos.Count() < 3)
             {
-                var mensagem = CriarMensagem(comando, ultimoEstado, payload);
+                var mensagem = CriarMensagem(criacao, ultimoEstado, payload);
                 await PublicarMensagem(mensagem);
             }
             else
             {
-                var novoProcessamentoComando = ProcessamentoComandoFactory.Novo(EstadoComando.Falha);
-                comando.ProcessamentosComandos.Add(novoProcessamentoComando);
-                comando.InstanteAtualizacao = novoProcessamentoComando.InstanteCriacao;
+                var novoProcessamentoCriacao = new ProcessamentoCriacao(EstadoProcessamento.Falha);
+                criacao.ProcessamentosCriacao.Add(novoProcessamentoCriacao);
+                criacao.InstanteAtualizacao = novoProcessamentoCriacao.InstanteCriacao;
             }
         }
 
-        private RetentativaComandoMessage CriarMensagem(Comando comando, EstadoComando ultimoEstado, byte[] payload)
+        private RetentativaCriacaoMessage CriarMensagem(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload)
         {
             return new()
             {
-                ComandoId = comando.Id,
+                CriacaoId = criacao.Id,
                 UltimoEstado = ultimoEstado,
                 Payload = payload
             };
         }
-        private async Task PublicarMensagem(RetentativaComandoMessage mensagem)
+        private async Task PublicarMensagem(RetentativaCriacaoMessage mensagem)
         {
             await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
         }
