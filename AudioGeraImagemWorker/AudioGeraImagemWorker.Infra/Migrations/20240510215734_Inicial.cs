@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AudioGeraImagemWorker.Infra.Migrations
 {
     /// <inheritdoc />
-    public partial class novo : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,7 @@ namespace AudioGeraImagemWorker.Infra.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Estado = table.Column<string>(type: "VARCHAR(20)", nullable: false),
                     InstanteCriacao = table.Column<DateTime>(type: "DATETIME2", nullable: false),
-                    MensagemErro = table.Column<string>(type: "VARCHAR(256)", nullable: true),
+                    MensagemErro = table.Column<string>(type: "VARCHAR(MAX)", nullable: true),
                     CriacaoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

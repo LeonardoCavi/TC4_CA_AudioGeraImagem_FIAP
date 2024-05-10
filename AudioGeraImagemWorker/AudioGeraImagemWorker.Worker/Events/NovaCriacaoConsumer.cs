@@ -16,15 +16,8 @@ namespace AudioGeraImagemWorker.Worker.Events
 
         public async Task Consume(ConsumeContext<CriacaoMessage> context)
         {
-            try
-            {
-                var mensagem = context.Message;
-                await _mediator.Send(new ProcessarCriacaoCommand(mensagem.CriacaoId, mensagem.Payload));
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-            }
+            var mensagem = context.Message;
+            await _mediator.Send(new ProcessarCriacaoCommand(mensagem.CriacaoId, mensagem.Payload));
         }
     }
 }

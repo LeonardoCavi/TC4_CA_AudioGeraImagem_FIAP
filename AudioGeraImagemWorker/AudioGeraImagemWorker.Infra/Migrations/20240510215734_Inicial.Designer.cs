@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AudioGeraImagemWorker.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240510205700_novo")]
-    partial class novo
+    [Migration("20240510215734_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,7 +73,7 @@ namespace AudioGeraImagemWorker.Infra.Migrations
                                 .HasColumnType("DATETIME2");
 
                             b1.Property<string>("MensagemErro")
-                                .HasColumnType("VARCHAR(256)");
+                                .HasColumnType("VARCHAR(MAX)");
 
                             b1.HasKey("Id");
 

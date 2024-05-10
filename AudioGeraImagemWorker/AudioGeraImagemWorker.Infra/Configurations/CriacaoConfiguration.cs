@@ -35,7 +35,7 @@ namespace AudioGeraImagemWorker.Infra.Configurations
                 processamentoCriacao.Property(x => x.InstanteCriacao)
                     .HasColumnType("DATETIME2");
                 processamentoCriacao.Property(x => x.MensagemErro)
-                    .HasColumnType("VARCHAR(256)")
+                    .HasColumnType("VARCHAR(MAX)")
                     .IsRequired(false);
             });
         }

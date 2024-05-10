@@ -62,21 +62,30 @@ namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
             {
                 var ultimoProcessamento = criacao.ProcessamentosCriacao.Last();
                 ultimoProcessamento.MensagemErro = ex.Message;
+                await _criacaoRepository.Atualizar(criacao);
+
                 await TratarErro(criacao, ultimoProcessamento.Estado, payload);
             }
         }
 
         private async Task TratarErro(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload)
         {
-            var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
-
-            if (ultimosProcessamentos.Count() == 3)
-                await AtualizarCriacao(criacao, EstadoProcessamento.Falha);
-            else
+            try
             {
-                var mensagem = new RetentativaCriacaoMessage(criacao.Id, ultimoEstado, payload);
-                await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
-            }       
+                var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
+
+                if (ultimosProcessamentos.Count() == 3)
+                    await AtualizarCriacao(criacao, EstadoProcessamento.Falha);
+                else
+                {
+                    var mensagem = new RetentativaCriacaoMessage(criacao.Id, ultimoEstado, payload);
+                    await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
+                }
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+            }
         }
 
         private async Task AtualizarCriacao(Criacao criacao, EstadoProcessamento novoEstado)

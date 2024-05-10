@@ -70,7 +70,7 @@ namespace AudioGeraImagemWorker.Infra.Migrations
                                 .HasColumnType("DATETIME2");
 
                             b1.Property<string>("MensagemErro")
-                                .HasColumnType("VARCHAR(256)");
+                                .HasColumnType("VARCHAR(MAX)");
 
                             b1.HasKey("Id");
 
