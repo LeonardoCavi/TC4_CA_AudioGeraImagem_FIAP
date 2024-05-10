@@ -4,7 +4,7 @@ using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
 using MediatR;
 
-namespace AudioGeraImagemAPI.UseCases.Criacoes.List
+namespace AudioGeraImagemAPI.UseCases.Criacoes.Listar
 {
     public class ListarCriacoesQueryHandler : IRequestHandler<ListarCriacoesQuery, ResultadoOperacao<IEnumerable<ListarCriacoesDTO>>>
     {

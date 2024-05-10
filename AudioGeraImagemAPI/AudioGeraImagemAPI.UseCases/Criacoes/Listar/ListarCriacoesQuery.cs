@@ -3,7 +3,7 @@ using MediatR;
 using System.Text.Json;
 
 
-namespace AudioGeraImagemAPI.UseCases.Criacoes.List
+namespace AudioGeraImagemAPI.UseCases.Criacoes.Listar
 {
     public class ListarCriacoesQuery : IRequest<ResultadoOperacao<IEnumerable<ListarCriacoesDTO>>>
     {

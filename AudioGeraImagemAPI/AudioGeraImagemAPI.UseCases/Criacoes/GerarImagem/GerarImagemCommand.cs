@@ -2,11 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace AudioGeraImagemAPI.UseCases.Criacoes.Create
+namespace AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem
 {
-    public class CriarCriacaoCommand: IRequest<ResultadoOperacao<Guid>>
+    public class GerarImagemCommand: IRequest<ResultadoOperacao<Guid>>
     {
-        public CriarCriacaoCommand(string descricao, IFormFile arquivo)
+        public GerarImagemCommand(string descricao, IFormFile arquivo)
         {
             Descricao = descricao;
             Arquivo = arquivo;

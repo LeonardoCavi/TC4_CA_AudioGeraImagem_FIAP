@@ -1,8 +1,8 @@
 ﻿using AudioGeraImagemAPI.API.Models;
-using AudioGeraImagemAPI.UseCases.Criacoes.Create;
-using AudioGeraImagemAPI.UseCases.Criacoes.Get;
-using AudioGeraImagemAPI.UseCases.Criacoes.List;
-using AudioGeraImagemAPI.UseCases.Imagens.Get;
+using AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem;
+using AudioGeraImagemAPI.UseCases.Criacoes.Listar;
+using AudioGeraImagemAPI.UseCases.Criacoes.Obter;
+using AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +27,7 @@ namespace AudioGeraImagemAPI.API.Controllers
         {
             try
             {
-                var command = new CriarCriacaoCommand(gerarImagem.Descricao, gerarImagem.Arquivo);
+                var command = new GerarImagemCommand(gerarImagem.Descricao, gerarImagem.Arquivo);
                 _logger.LogInformation($"[{ClassName}] - [GerarImagem] => Request.: {command}");
                 var resultado = await _mediator.Send(command);
 

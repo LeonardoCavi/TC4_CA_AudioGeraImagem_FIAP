@@ -4,7 +4,7 @@ using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
 using MediatR;
 
-namespace AudioGeraImagemAPI.UseCases.Imagens.Get
+namespace AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem
 {
     public class ObterImagemQueryHandler : IRequestHandler<ObterImagemQuery, ResultadoOperacao<Stream>>
     {

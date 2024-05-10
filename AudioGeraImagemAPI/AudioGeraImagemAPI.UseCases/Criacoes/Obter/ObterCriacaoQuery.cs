@@ -2,7 +2,7 @@
 using MediatR;
 using System.Text.Json;
 
-namespace AudioGeraImagemAPI.UseCases.Criacoes.Get
+namespace AudioGeraImagemAPI.UseCases.Criacoes.Obter
 {
     public class ObterCriacaoQuery: IRequest<ResultadoOperacao<CriacaoDTO>>
     {

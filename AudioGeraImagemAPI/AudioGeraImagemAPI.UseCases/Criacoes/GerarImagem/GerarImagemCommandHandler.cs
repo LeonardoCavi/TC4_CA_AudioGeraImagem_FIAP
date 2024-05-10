@@ -7,22 +7,22 @@ using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 
-namespace AudioGeraImagemAPI.UseCases.Criacoes.Create
+namespace AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem
 {
-    public class CriarCriacaoCommandHandler : IRequestHandler<CriarCriacaoCommand, ResultadoOperacao<Guid>>
+    public class GerarImagemCommandHandler : IRequestHandler<GerarImagemCommand, ResultadoOperacao<Guid>>
     {
         private readonly ICriacaoRepository _repository;
         private readonly IBus _bus;
         private string nomeFila;
 
-        public CriarCriacaoCommandHandler(ICriacaoRepository repository, IBus bus, IConfiguration configuration)
+        public GerarImagemCommandHandler(ICriacaoRepository repository, IBus bus, IConfiguration configuration)
         {
             _repository = repository;
             _bus = bus;
             nomeFila = configuration.GetRequiredSection("MassTransit")["Fila"] ?? string.Empty;
         }
 
-        public async Task<ResultadoOperacao<Guid>> Handle(CriarCriacaoCommand request, CancellationToken cancellationToken)
+        public async Task<ResultadoOperacao<Guid>> Handle(GerarImagemCommand request, CancellationToken cancellationToken)
         {
             if (!request.Valido())
                 return ResultadoOperacaoFactory.Criar(false, "Escreva uma descrição com até 256 caracteres e o arquivo deve ser .mp3", Guid.Empty);
@@ -40,7 +40,7 @@ namespace AudioGeraImagemAPI.UseCases.Criacoes.Create
             return ResultadoOperacaoFactory.Criar(true, string.Empty, criacao.Id);
         }
 
-        private byte[] ObterPayload(CriarCriacaoCommand request)
+        private byte[] ObterPayload(GerarImagemCommand request)
         {
             using var stream = request.Arquivo.OpenReadStream();
             using var memoryStream = new MemoryStream();

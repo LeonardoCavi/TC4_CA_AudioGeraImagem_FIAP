@@ -2,9 +2,9 @@
 using MediatR;
 using System.Text.Json;
 
-namespace AudioGeraImagemAPI.UseCases.Imagens.Get
+namespace AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem
 {
-    public class ObterImagemQuery: IRequest<ResultadoOperacao<Stream>>
+    public class ObterImagemQuery : IRequest<ResultadoOperacao<Stream>>
     {
         public ObterImagemQuery(string id)
         {
