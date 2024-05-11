@@ -274,7 +274,6 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.UseCases.Tes
             await _criacaoRepositoryMock.Received().Atualizar(Arg.Is<Criacao>(x =>
                 x.Id == processarCriacaoCommand.CriacaoId &&
                 x.ProcessamentosCriacao.Count(x => x.Estado == EstadoProcessamento.SalvandoAudio) == 3 &&
-                x.ProcessamentosCriacao.Last(x => x.Estado == EstadoProcessamento.SalvandoAudio).Estado == EstadoProcessamento.SalvandoAudio &&
                 x.ProcessamentosCriacao.Last(x => x.Estado == EstadoProcessamento.SalvandoAudio).MensagemErro == "erro teste 3" &&
                 x.ProcessamentosCriacao.Last().Estado == EstadoProcessamento.Falha));
 
