@@ -1,8 +1,10 @@
 ﻿using AudioGeraImagemWorker.Worker.Events;
 using MassTransit;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class BusConfiguration
     {
         public static void AddBusConfiguration(this IServiceCollection services, IConfiguration configuration)

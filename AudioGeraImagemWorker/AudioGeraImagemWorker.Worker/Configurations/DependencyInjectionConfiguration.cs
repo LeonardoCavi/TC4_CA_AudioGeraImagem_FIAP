@@ -4,9 +4,11 @@ using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
 using AudioGeraImagemWorker.Domain.Utility;
 using AudioGeraImagemWorker.Infra.Repositories;
 using AudioGeraImagemWorker.Infra.Vendor;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class DependencyInjectionConfiguration
     {
         public static void AddDepencyInjection(this IServiceCollection services)

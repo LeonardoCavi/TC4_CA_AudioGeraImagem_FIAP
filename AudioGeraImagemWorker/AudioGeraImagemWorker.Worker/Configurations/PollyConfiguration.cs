@@ -1,8 +1,10 @@
 ﻿using Polly;
 using Polly.Retry;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class PollyConfiguration
     {
         public static void AddRetryPolicy(this IServiceCollection services)

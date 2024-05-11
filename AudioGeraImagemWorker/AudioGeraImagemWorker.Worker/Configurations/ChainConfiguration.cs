@@ -1,11 +1,10 @@
-﻿using AudioGeraImagemWorker.Domain.Interfaces.Repositories;
-using AudioGeraImagemWorker.Domain.Interfaces.Services;
-using AudioGeraImagemWorker.Domain.Interfaces.Utility;
-using AudioGeraImagemWorker.Domain.Interfaces.Vendor;
+﻿using AudioGeraImagemWorker.Domain.Interfaces.Services;
 using AudioGeraImagemWorker.Domain.Services.ProcessamentoHandler;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class ChainConfiguration
     {
         public static void AddChainConfiguration(this IServiceCollection services)
