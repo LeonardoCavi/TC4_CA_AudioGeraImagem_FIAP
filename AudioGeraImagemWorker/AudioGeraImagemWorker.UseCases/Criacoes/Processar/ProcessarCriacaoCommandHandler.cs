@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
 {
-    internal class ProcessarCriacaoCommandHandler : IRequestHandler<ProcessarCriacaoCommand>
+    public class ProcessarCriacaoCommandHandler : IRequestHandler<ProcessarCriacaoCommand>
     {
         private readonly string _className = typeof(ProcessarCriacaoCommandHandler).Name;
         private readonly ILogger<ProcessarCriacaoCommandHandler> _logger;
@@ -70,21 +70,14 @@ namespace AudioGeraImagemWorker.UseCases.Criacoes.Processar
 
         private async Task TratarErro(Criacao criacao, EstadoProcessamento ultimoEstado, byte[] payload)
         {
-            try
-            {
-                var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
+            var ultimosProcessamentos = criacao.ProcessamentosCriacao.Where(x => x.Estado == ultimoEstado);
 
-                if (ultimosProcessamentos.Count() == 3)
-                    await AtualizarCriacao(criacao, EstadoProcessamento.Falha);
-                else
-                {
-                    var mensagem = new RetentativaCriacaoMessage(criacao.Id, ultimoEstado, payload);
-                    await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
-                }
-            }
-            catch (Exception ex)
+            if (ultimosProcessamentos.Count() == 3)
+                await AtualizarCriacao(criacao, EstadoProcessamento.Falha);
+            else
             {
-                var message = ex.Message;
+                var mensagem = new RetentativaCriacaoMessage(criacao.Id, ultimoEstado, payload);
+                await _messageScheduler.SchedulePublish(DateTime.UtcNow + TimeSpan.FromSeconds(20), mensagem);
             }
         }
 

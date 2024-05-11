@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AudioGeraImagemWorker.Domain\AudioGeraImagemWorker.Domain.csproj" />
     <ProjectReference Include="..\AudioGeraImagemWorker.Infra\AudioGeraImagemWorker.Infra.csproj" />
+    <ProjectReference Include="..\AudioGeraImagemWorker.Worker\AudioGeraImagemWorker.Worker.csproj" />
   </ItemGroup>
 
   <ItemGroup>
