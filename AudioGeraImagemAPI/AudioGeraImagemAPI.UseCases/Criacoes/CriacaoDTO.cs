@@ -1,7 +1,9 @@
 ﻿using AudioGeraImagemAPI.Domain.Entities;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemAPI.UseCases.Criacoes
 {
+    [ExcludeFromCodeCoverage]
     public class CriacaoDTO
     {
         public Guid Id { get; set; }

@@ -1,8 +1,10 @@
 ﻿using AudioGeraImagemAPI.Domain.Enums;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
 namespace AudioGeraImagemAPI.UseCases.Criacoes
 {
+    [ExcludeFromCodeCoverage]
     public class ListarCriacoesDTO
     {
         public Guid Id { get; set; }

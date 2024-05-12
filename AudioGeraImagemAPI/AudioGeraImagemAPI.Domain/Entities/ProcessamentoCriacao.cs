@@ -1,8 +1,10 @@
 ﻿using AudioGeraImagemAPI.Domain.Enums;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
 namespace AudioGeraImagemAPI.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class ProcessamentoCriacao
     {
         public Guid Id { get; set; }

@@ -1,7 +1,9 @@
 ﻿using AudioGeraImagemAPI.Domain.Enums;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemAPI.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class Criacao : EntidadeBase
     {
         public string Descricao { get; set; }
@@ -12,7 +14,8 @@ namespace AudioGeraImagemAPI.Domain.Entities
         public DateTime InstanteAtualizacao { get; set; }
         public List<ProcessamentoCriacao> ProcessamentosCriacao { get; set; }
 
-        public Criacao() { }
+        public Criacao()
+        { }
 
         public Criacao(string descricao)
         {

@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.Infra", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.UseCases", "AudioGeraImagemAPI.UseCases\AudioGeraImagemAPI.UseCases.csproj", "{465782E7-53E0-4C44-A486-71BCD215710C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. TEST", "5. TEST", "{EEFB49E3-754E-4C7A-AEF6-2331CBB3495B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemAPI.Test", "AudioGeraImagemAPI.Test\AudioGeraImagemAPI.Test.csproj", "{7F058949-1A1E-4148-80FB-2000AA260BDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{465782E7-53E0-4C44-A486-71BCD215710C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{465782E7-53E0-4C44-A486-71BCD215710C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{465782E7-53E0-4C44-A486-71BCD215710C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F058949-1A1E-4148-80FB-2000AA260BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F058949-1A1E-4148-80FB-2000AA260BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F058949-1A1E-4148-80FB-2000AA260BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F058949-1A1E-4148-80FB-2000AA260BDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{F485AE15-DAEA-4F2A-94E7-24465DFC961F} = {6C7C191D-65EC-4745-84AD-E5B723B24893}
 		{E4544896-3654-44C0-9BDC-0256EC7686B6} = {3BA9797F-E4DF-4797-8875-58DE688D01A5}
 		{465782E7-53E0-4C44-A486-71BCD215710C} = {E4DCBE81-0AE9-49E2-97DD-6BFFD7D681F3}
+		{7F058949-1A1E-4148-80FB-2000AA260BDC} = {EEFB49E3-754E-4C7A-AEF6-2331CBB3495B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {532B4F96-F1C2-432C-80B2-DF06976ACDC3}

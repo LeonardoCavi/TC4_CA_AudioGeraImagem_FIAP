@@ -1,0 +1,843 @@
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Program.cs
+FN:2,System.Void Program::<Main>$(System.String[])
+FNDA:0,System.Void Program::<Main>$(System.String[])
+DA:3,0
+DA:6,0
+DA:7,0
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:26,0
+DA:28,0
+DA:30,0
+DA:32,0
+BRDA:20,166,0,0
+BRDA:20,166,1,0
+LF:21
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Models\GerarImagemRequest.cs
+FN:4,System.String AudioGeraImagemAPI.API.Models.GerarImagemRequest::get_Descricao()
+FNDA:6,System.String AudioGeraImagemAPI.API.Models.GerarImagemRequest::get_Descricao()
+DA:5,6
+FN:5,Microsoft.AspNetCore.Http.IFormFile AudioGeraImagemAPI.API.Models.GerarImagemRequest::get_Arquivo()
+FNDA:6,Microsoft.AspNetCore.Http.IFormFile AudioGeraImagemAPI.API.Models.GerarImagemRequest::get_Arquivo()
+DA:6,6
+LF:2
+LH:2
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Controllers\CriacaoController.cs
+FN:16,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController::.ctor(MediatR.IMediator,Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemAPI.API.Controllers.CriacaoController>)
+FNDA:12,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController::.ctor(MediatR.IMediator,Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemAPI.API.Controllers.CriacaoController>)
+DA:17,12
+DA:19,12
+DA:20,12
+DA:21,12
+DA:22,12
+DA:23,12
+FN:47,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<BuscarCriacoes>d__5::MoveNext()
+FNDA:3,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<BuscarCriacoes>d__5::MoveNext()
+DA:48,3
+DA:50,3
+DA:51,3
+DA:52,3
+DA:53,3
+DA:55,2
+DA:56,1
+DA:58,1
+DA:60,1
+DA:61,1
+DA:62,1
+DA:63,1
+DA:65,3
+BRDA:55,303,0,1
+BRDA:55,303,1,1
+FN:26,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<GerarImagem>d__4::MoveNext()
+FNDA:3,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<GerarImagem>d__4::MoveNext()
+DA:27,3
+DA:29,3
+DA:30,3
+DA:31,3
+DA:32,3
+DA:34,2
+DA:35,1
+DA:37,1
+DA:39,1
+DA:40,1
+DA:41,1
+DA:42,1
+DA:44,3
+BRDA:34,319,0,1
+BRDA:34,319,1,1
+FN:68,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<ObterCriacao>d__6::MoveNext()
+FNDA:3,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<ObterCriacao>d__6::MoveNext()
+DA:69,3
+DA:71,3
+DA:72,3
+DA:73,3
+DA:74,3
+DA:76,3
+DA:77,1
+DA:79,1
+DA:81,1
+DA:82,1
+DA:83,1
+DA:84,1
+DA:86,3
+BRDA:76,303,0,1
+BRDA:76,303,1,1
+FN:89,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<ObterImagem>d__7::MoveNext()
+FNDA:3,System.Void AudioGeraImagemAPI.API.Controllers.CriacaoController/<ObterImagem>d__7::MoveNext()
+DA:90,3
+DA:92,3
+DA:93,3
+DA:94,3
+DA:95,3
+DA:97,2
+DA:98,1
+DA:100,1
+DA:102,1
+DA:103,1
+DA:104,1
+DA:105,1
+DA:107,3
+BRDA:97,303,0,1
+BRDA:97,303,1,1
+LF:58
+LH:58
+BRF:8
+BRH:8
+FNF:5
+FNH:5
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\BusConfiguration.cs
+FN:7,System.Void AudioGeraImagemAPI.API.Configurations.BusConfiguration::AddBusConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.BusConfiguration::AddBusConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:8,1
+DA:9,1
+DA:11,1
+DA:12,1
+DA:13,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,2
+DA:24,1
+DA:25,1
+DA:26,2
+DA:27,2
+DA:28,1
+BRDA:11,32,0,0
+BRDA:11,32,1,1
+BRDA:12,58,0,0
+BRDA:12,58,1,1
+BRDA:13,84,0,0
+BRDA:13,84,1,1
+BRDA:17,9,0,1
+BRDA:17,9,1,1
+BRDA:19,20,0,1
+BRDA:19,20,1,1
+LF:19
+LH:19
+BRF:10
+BRH:7
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\DbContextConfiguration.cs
+FN:8,System.Void AudioGeraImagemAPI.API.Configurations.DbContextConfiguration::AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.DbContextConfiguration::AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:9,1
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,2
+DA:14,1
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\DependencyInjectionConfiguration.cs
+FN:9,System.Void AudioGeraImagemAPI.API.Configurations.DependencyInjectionConfiguration::AddDepencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.DependencyInjectionConfiguration::AddDepencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,1
+LF:4
+LH:4
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\MediatRConfiguration.cs
+FN:7,System.Void AudioGeraImagemAPI.API.Configurations.MediatRConfiguration::AddMediatRConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.MediatRConfiguration::AddMediatRConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:8,1
+DA:9,1
+DA:10,1
+DA:11,1
+DA:12,2
+DA:13,1
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\PollyConfiguration.cs
+FN:8,System.Void AudioGeraImagemAPI.API.Configurations.PollyConfiguration::AddRetryPolicy(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:2,System.Void AudioGeraImagemAPI.API.Configurations.PollyConfiguration::AddRetryPolicy(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:9,2
+DA:10,2
+DA:11,2
+DA:12,2
+DA:13,2
+DA:14,2
+DA:15,2
+DA:16,2
+FN:17,Polly.Retry.AsyncRetryPolicy AudioGeraImagemAPI.API.Configurations.PollyConfiguration::CreateWaitAndRetryPolicy(System.Collections.Generic.IEnumerable`1<System.TimeSpan>)
+FNDA:2,Polly.Retry.AsyncRetryPolicy AudioGeraImagemAPI.API.Configurations.PollyConfiguration::CreateWaitAndRetryPolicy(System.Collections.Generic.IEnumerable`1<System.TimeSpan>)
+DA:18,2
+DA:19,2
+DA:20,2
+DA:21,2
+DA:22,2
+LF:13
+LH:13
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.API\Configurations\SerilogConfiguration.cs
+FN:9,System.Void AudioGeraImagemAPI.API.Configurations.SerilogConfiguration::AddSerilogConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.SerilogConfiguration::AddSerilogConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,1
+DA:14,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+FN:20,System.Void AudioGeraImagemAPI.API.Configurations.SerilogConfiguration::UseSerilogConfiguration(Microsoft.Extensions.Hosting.IHostBuilder)
+FNDA:1,System.Void AudioGeraImagemAPI.API.Configurations.SerilogConfiguration::UseSerilogConfiguration(Microsoft.Extensions.Hosting.IHostBuilder)
+DA:21,1
+DA:22,1
+DA:23,1
+LF:12
+LH:12
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Domain\Utility\HttpHelper.cs
+FN:30,AudioGeraImagemAPI.Domain.Utility.CodeHttp AudioGeraImagemAPI.Domain.Utility.Response::get_Code()
+FNDA:0,AudioGeraImagemAPI.Domain.Utility.CodeHttp AudioGeraImagemAPI.Domain.Utility.Response::get_Code()
+DA:31,0
+FN:31,System.String AudioGeraImagemAPI.Domain.Utility.Response::get_Received()
+FNDA:0,System.String AudioGeraImagemAPI.Domain.Utility.Response::get_Received()
+DA:32,0
+FN:37,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemAPI.Domain.Utility.HttpHelper>,Polly.AsyncPolicy)
+FNDA:1,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemAPI.Domain.Utility.HttpHelper>,Polly.AsyncPolicy)
+DA:38,1
+DA:41,1
+DA:42,1
+DA:43,1
+DA:44,1
+DA:45,1
+DA:46,1
+FN:50,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<>c__DisplayClass4_0/<<GetBytes>b__0>d::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<>c__DisplayClass4_0/<<GetBytes>b__0>d::MoveNext()
+DA:51,0
+DA:52,0
+DA:53,0
+FN:71,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<>c__DisplayClass5_0`1/<<Send>b__0>d::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<>c__DisplayClass5_0`1/<<Send>b__0>d::MoveNext()
+DA:72,0
+DA:73,0
+DA:74,0
+FN:96,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<ExternalIntegration>d__6`1::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<ExternalIntegration>d__6`1::MoveNext()
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:109,0
+DA:112,0
+DA:113,0
+DA:116,0
+DA:117,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:128,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:142,0
+DA:143,0
+DA:146,0
+DA:148,0
+BRDA:101,109,0,0
+BRDA:103,216,1,0
+BRDA:103,216,0,0
+BRDA:101,109,1,0
+BRDA:109,280,1,0
+BRDA:109,280,2,0
+BRDA:116,481,0,0
+BRDA:116,481,1,0
+BRDA:109,280,3,0
+BRDA:128,869,0,0
+BRDA:128,869,1,0
+BRDA:109,280,4,0
+BRDA:109,280,0,0
+FN:48,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<GetBytes>d__4::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<GetBytes>d__4::MoveNext()
+DA:49,0
+DA:50,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:61,0
+DA:62,0
+BRDA:49,16,0,0
+BRDA:49,16,1,0
+BRDA:55,261,0,0
+BRDA:55,261,1,0
+FN:150,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<ProcessAndAnalyzeResponse>d__7::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<ProcessAndAnalyzeResponse>d__7::MoveNext()
+DA:151,0
+DA:152,0
+DA:153,0
+DA:156,0
+DA:157,0
+DA:159,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:167,0
+DA:168,0
+DA:169,0
+DA:172,0
+DA:173,0
+DA:174,0
+DA:177,0
+DA:178,0
+DA:179,0
+DA:182,0
+DA:183,0
+DA:184,0
+DA:187,0
+DA:188,0
+DA:189,0
+DA:192,0
+DA:193,0
+DA:194,0
+DA:197,0
+DA:198,0
+DA:199,0
+DA:202,0
+DA:203,0
+DA:204,0
+DA:205,0
+DA:206,0
+DA:209,0
+DA:210,0
+DA:211,0
+DA:212,0
+DA:213,0
+BRDA:159,213,0,0
+BRDA:159,251,0,0
+BRDA:159,213,1,0
+BRDA:159,213,2,0
+BRDA:159,213,3,0
+BRDA:159,213,5,0
+BRDA:159,213,6,0
+BRDA:159,251,1,0
+BRDA:159,265,1,0
+BRDA:159,213,4,0
+BRDA:159,265,0,0
+FN:67,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<Send>d__5`1::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Domain.Utility.HttpHelper/<Send>d__5`1::MoveNext()
+DA:68,0
+DA:70,0
+DA:71,0
+DA:76,0
+DA:78,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:90,0
+DA:92,0
+LF:116
+LH:7
+BRF:28
+BRH:0
+FNF:9
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Domain\Utility\Factory\ResultadoOperacaoFactory.cs
+FN:12,AudioGeraImagemAPI.Domain.Utility.DTO.ResultadoOperacao`1<T> AudioGeraImagemAPI.Domain.Utility.Factory.ResultadoOperacaoFactory::Criar(System.Boolean,System.String,T)
+FNDA:7,AudioGeraImagemAPI.Domain.Utility.DTO.ResultadoOperacao`1<T> AudioGeraImagemAPI.Domain.Utility.Factory.ResultadoOperacaoFactory::Criar(System.Boolean,System.String,T)
+DA:13,7
+DA:14,7
+DA:15,7
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Infra\ApplicationDbContext.cs
+FN:13,Microsoft.EntityFrameworkCore.DbSet`1<AudioGeraImagemAPI.Domain.Entities.Criacao> AudioGeraImagemAPI.Infra.ApplicationDbContext::get_Criacoes()
+FNDA:16,Microsoft.EntityFrameworkCore.DbSet`1<AudioGeraImagemAPI.Domain.Entities.Criacao> AudioGeraImagemAPI.Infra.ApplicationDbContext::get_Criacoes()
+DA:14,16
+FN:16,System.Void AudioGeraImagemAPI.Infra.ApplicationDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:2,System.Void AudioGeraImagemAPI.Infra.ApplicationDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:17,2
+DA:18,2
+DA:20,2
+DA:21,2
+FN:8,System.Void AudioGeraImagemAPI.Infra.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<AudioGeraImagemAPI.Infra.ApplicationDbContext>)
+FNDA:5,System.Void AudioGeraImagemAPI.Infra.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<AudioGeraImagemAPI.Infra.ApplicationDbContext>)
+DA:9,5
+DA:10,5
+DA:12,5
+LF:8
+LH:8
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Infra\Repositories\CriacaoRepository.cs
+FN:9,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository::.ctor(AudioGeraImagemAPI.Infra.ApplicationDbContext)
+FNDA:4,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository::.ctor(AudioGeraImagemAPI.Infra.ApplicationDbContext)
+DA:10,4
+DA:11,4
+DA:12,4
+FN:30,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<Buscar>d__3::MoveNext()
+FNDA:1,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<Buscar>d__3::MoveNext()
+DA:31,1
+DA:32,1
+DA:33,1
+DA:34,1
+DA:35,1
+DA:36,1
+DA:37,1
+FN:14,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<ObterCriacaoProcessamentos>d__1::MoveNext()
+FNDA:1,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<ObterCriacaoProcessamentos>d__1::MoveNext()
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+DA:19,1
+DA:20,1
+FN:22,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<ObterCriacoesProcessamentos>d__2::MoveNext()
+FNDA:1,System.Void AudioGeraImagemAPI.Infra.Repositories.CriacaoRepository/<ObterCriacoesProcessamentos>d__2::MoveNext()
+DA:23,1
+DA:24,1
+DA:25,1
+DA:26,1
+DA:27,1
+DA:28,1
+LF:22
+LH:22
+BRF:0
+BRH:0
+FNF:4
+FNH:4
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Infra\Repositories\EntitdadeBaseRepository.cs
+FN:11,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1::.ctor(AudioGeraImagemAPI.Infra.ApplicationDbContext)
+FNDA:4,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1::.ctor(AudioGeraImagemAPI.Infra.ApplicationDbContext)
+DA:12,4
+DA:13,4
+DA:14,4
+DA:15,4
+DA:16,4
+FN:18,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Atualizar>d__3::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Atualizar>d__3::MoveNext()
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:24,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Excluir>d__4::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Excluir>d__4::MoveNext()
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Inserir>d__5::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Inserir>d__5::MoveNext()
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+FN:36,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Obter>d__6::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<Obter>d__6::MoveNext()
+DA:37,0
+DA:38,0
+DA:39,0
+FN:41,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<ObterTodos>d__7::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.Infra.Repositories.EntidadeBaseRepository`1/<ObterTodos>d__7::MoveNext()
+DA:42,0
+DA:43,0
+DA:44,0
+LF:23
+LH:5
+BRF:0
+BRH:0
+FNF:6
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.Infra\Configurations\CriacaoConfiguration.cs
+FN:9,System.Void AudioGeraImagemAPI.Infra.Configurations.CriacaoConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<AudioGeraImagemAPI.Domain.Entities.Criacao>)
+FNDA:2,System.Void AudioGeraImagemAPI.Infra.Configurations.CriacaoConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<AudioGeraImagemAPI.Domain.Entities.Criacao>)
+DA:10,2
+DA:11,2
+DA:12,2
+DA:13,2
+DA:14,2
+DA:15,2
+DA:16,2
+DA:17,2
+DA:18,2
+DA:19,2
+DA:20,2
+DA:21,2
+DA:22,2
+DA:23,2
+DA:24,2
+DA:25,2
+DA:26,2
+DA:27,2
+DA:29,2
+DA:30,2
+DA:31,2
+DA:32,2
+DA:33,2
+DA:34,2
+DA:35,2
+DA:36,2
+DA:37,2
+DA:38,2
+DA:39,2
+DA:40,4
+DA:41,2
+LF:31
+LH:31
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\Obter\ObterCriacaoQuery.cs
+FN:15,System.String AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQuery::get_Id()
+FNDA:10,System.String AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQuery::get_Id()
+DA:16,10
+FN:18,System.String AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQuery::ToString()
+FNDA:3,System.String AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQuery::ToString()
+DA:19,3
+DA:20,3
+DA:21,3
+LF:4
+LH:4
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\Obter\ObterCriacaoQueryHandler.cs
+FN:28,AudioGeraImagemAPI.UseCases.Criacoes.CriacaoDTO AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler::CriarCriacaoDTO(AudioGeraImagemAPI.Domain.Entities.Criacao)
+FNDA:1,AudioGeraImagemAPI.UseCases.Criacoes.CriacaoDTO AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler::CriarCriacaoDTO(AudioGeraImagemAPI.Domain.Entities.Criacao)
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+DA:33,1
+DA:34,1
+DA:35,1
+DA:36,1
+DA:37,1
+DA:38,1
+DA:39,1
+DA:40,1
+DA:41,1
+FN:12,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository)
+FNDA:2,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository)
+DA:13,2
+DA:14,2
+DA:15,2
+DA:16,2
+FN:18,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler/<Handle>d__2::MoveNext()
+FNDA:2,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Obter.ObterCriacaoQueryHandler/<Handle>d__2::MoveNext()
+DA:19,2
+DA:20,2
+DA:22,2
+DA:23,1
+DA:25,1
+DA:26,2
+BRDA:22,169,0,1
+BRDA:22,169,1,1
+LF:23
+LH:23
+BRF:2
+BRH:2
+FNF:3
+FNH:3
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\ObterImagem\ObterImagemQuery.cs
+FN:13,System.String AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::get_Id()
+FNDA:6,System.String AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::get_Id()
+DA:14,6
+FN:16,System.String AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::ToString()
+FNDA:3,System.String AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::ToString()
+DA:17,3
+DA:18,3
+DA:19,3
+FN:8,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::.ctor(System.String)
+FNDA:3,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQuery::.ctor(System.String)
+DA:9,3
+DA:10,3
+DA:11,3
+DA:12,3
+LF:8
+LH:8
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\ObterImagem\ObterImagemQueryHandler.cs
+FN:35,System.IO.Stream AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler::ObterStream(System.Byte[])
+FNDA:0,System.IO.Stream AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler::ObterStream(System.Byte[])
+DA:36,0
+DA:37,0
+DA:38,0
+FN:13,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository,AudioGeraImagemAPI.Domain.Utility.HttpHelper)
+FNDA:0,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository,AudioGeraImagemAPI.Domain.Utility.HttpHelper)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+FN:26,System.Boolean AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler/<>c::<Handle>b__3_0(AudioGeraImagemAPI.Domain.Entities.ProcessamentoCriacao)
+FNDA:0,System.Boolean AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler/<>c::<Handle>b__3_0(AudioGeraImagemAPI.Domain.Entities.ProcessamentoCriacao)
+DA:27,0
+FN:20,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler/<Handle>d__3::MoveNext()
+FNDA:0,System.Void AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem.ObterImagemQueryHandler/<Handle>d__3::MoveNext()
+DA:21,0
+DA:22,0
+DA:24,0
+DA:25,0
+DA:28,0
+DA:30,0
+DA:32,0
+DA:33,0
+BRDA:24,180,0,0
+BRDA:24,180,1,0
+BRDA:27,258,0,0
+BRDA:27,258,1,0
+LF:17
+LH:0
+BRF:4
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\Listar\ListarCriacoesQueryHandler.cs
+FN:40,System.Collections.Generic.IEnumerable`1<AudioGeraImagemAPI.UseCases.Criacoes.ListarCriacoesDTO> AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler::CriarListarCriacoesViewModel(System.Collections.Generic.IEnumerable`1<AudioGeraImagemAPI.Domain.Entities.Criacao>)
+FNDA:4,System.Collections.Generic.IEnumerable`1<AudioGeraImagemAPI.UseCases.Criacoes.ListarCriacoesDTO> AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler::CriarListarCriacoesViewModel(System.Collections.Generic.IEnumerable`1<AudioGeraImagemAPI.Domain.Entities.Criacao>)
+DA:41,4
+DA:42,4
+DA:43,4
+DA:44,4
+DA:45,4
+DA:46,4
+DA:47,4
+DA:48,4
+DA:49,0
+DA:50,4
+DA:51,4
+FN:12,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository)
+FNDA:4,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository)
+DA:13,4
+DA:14,4
+DA:15,4
+DA:16,4
+FN:18,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler/<Handle>d__2::MoveNext()
+FNDA:4,System.Void AudioGeraImagemAPI.UseCases.Criacoes.Listar.ListarCriacoesQueryHandler/<Handle>d__2::MoveNext()
+DA:19,4
+DA:22,4
+DA:23,2
+DA:24,2
+DA:26,2
+DA:27,1
+DA:28,1
+DA:30,2
+DA:31,2
+DA:33,2
+DA:34,1
+DA:35,1
+DA:37,2
+DA:38,4
+BRDA:22,80,0,2
+BRDA:26,223,0,2
+BRDA:26,223,1,0
+BRDA:26,246,0,1
+BRDA:26,246,1,1
+BRDA:22,80,1,2
+BRDA:33,686,0,2
+BRDA:33,686,1,0
+BRDA:33,709,0,1
+BRDA:33,709,1,1
+LF:29
+LH:28
+BRF:10
+BRH:8
+FNF:3
+FNH:3
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\GerarImagem\GerarImagemCommand.cs
+FN:14,System.String AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::get_Descricao()
+FNDA:16,System.String AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::get_Descricao()
+DA:15,16
+FN:15,Microsoft.AspNetCore.Http.IFormFile AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::get_Arquivo()
+FNDA:14,Microsoft.AspNetCore.Http.IFormFile AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::get_Arquivo()
+DA:16,14
+FN:18,System.Boolean AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::Valido()
+FNDA:4,System.Boolean AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::Valido()
+DA:19,4
+DA:20,4
+DA:21,1
+DA:23,3
+DA:24,1
+DA:26,2
+DA:27,4
+BRDA:20,21,0,1
+BRDA:20,21,1,3
+BRDA:23,53,0,1
+BRDA:23,53,1,2
+FN:28,System.String AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::ToString()
+FNDA:3,System.String AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::ToString()
+DA:29,3
+FN:8,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::.ctor(System.String,Microsoft.AspNetCore.Http.IFormFile)
+FNDA:7,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand::.ctor(System.String,Microsoft.AspNetCore.Http.IFormFile)
+DA:9,7
+DA:10,7
+DA:11,7
+DA:12,7
+DA:13,7
+LF:15
+LH:15
+BRF:4
+BRH:4
+FNF:5
+FNH:5
+end_of_record
+SF:D:\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI\AudioGeraImagemAPI.UseCases\Criacoes\GerarImagem\GerarImagemCommandHandler.cs
+FN:43,System.Byte[] AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler::ObterPayload(AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand)
+FNDA:1,System.Byte[] AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler::ObterPayload(AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommand)
+DA:44,1
+DA:45,1
+DA:46,1
+DA:47,1
+DA:48,1
+DA:50,1
+DA:51,1
+FN:17,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository,MassTransit.IBus,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:1,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler::.ctor(AudioGeraImagemAPI.Domain.Interfaces.Repositories.ICriacaoRepository,MassTransit.IBus,Microsoft.Extensions.Configuration.IConfiguration)
+DA:18,1
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+BRDA:22,45,0,0
+BRDA:22,45,1,1
+FN:25,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler/<Handle>d__4::MoveNext()
+FNDA:1,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler/<Handle>d__4::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,0
+DA:30,1
+DA:32,1
+DA:34,1
+DA:36,1
+DA:38,1
+DA:40,1
+DA:41,1
+BRDA:27,45,0,0
+BRDA:27,45,1,1
+FN:52,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler/<PublicarMensagem>d__6::MoveNext()
+FNDA:1,System.Void AudioGeraImagemAPI.UseCases.Criacoes.GerarImagem.GerarImagemCommandHandler/<PublicarMensagem>d__6::MoveNext()
+DA:53,1
+DA:54,1
+DA:55,1
+DA:56,1
+LF:27
+LH:26
+BRF:4
+BRH:2
+FNF:4
+FNH:4
+end_of_record
