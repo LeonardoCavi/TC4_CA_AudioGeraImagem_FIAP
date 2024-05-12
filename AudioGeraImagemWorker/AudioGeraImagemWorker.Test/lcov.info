@@ -87,14 +87,14 @@ FNH:8
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Domain\Utility\HttpHelper.cs
 FN:27,AudioGeraImagemWorker.Domain.Utility.CodeHttp AudioGeraImagemWorker.Domain.Utility.Response::get_Code()
-FNDA:0,AudioGeraImagemWorker.Domain.Utility.CodeHttp AudioGeraImagemWorker.Domain.Utility.Response::get_Code()
-DA:28,0
+FNDA:8,AudioGeraImagemWorker.Domain.Utility.CodeHttp AudioGeraImagemWorker.Domain.Utility.Response::get_Code()
+DA:28,8
 FN:28,System.String AudioGeraImagemWorker.Domain.Utility.Response::get_Received()
-FNDA:0,System.String AudioGeraImagemWorker.Domain.Utility.Response::get_Received()
-DA:29,0
-FN:34,System.Void AudioGeraImagemWorker.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemWorker.Domain.Utility.HttpHelper>,Polly.AsyncPolicy)
-FNDA:0,System.Void AudioGeraImagemWorker.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemWorker.Domain.Utility.HttpHelper>,Polly.AsyncPolicy)
-DA:35,0
+FNDA:8,System.String AudioGeraImagemWorker.Domain.Utility.Response::get_Received()
+DA:29,8
+FN:33,System.Void AudioGeraImagemWorker.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemWorker.Domain.Utility.HttpHelper>,Polly.IAsyncPolicy)
+FNDA:0,System.Void AudioGeraImagemWorker.Domain.Utility.HttpHelper::.ctor(Microsoft.Extensions.Logging.ILogger`1<AudioGeraImagemWorker.Domain.Utility.HttpHelper>,Polly.IAsyncPolicy)
+DA:34,0
 DA:38,0
 DA:39,0
 DA:40,0
@@ -249,11 +249,11 @@ DA:85,0
 DA:87,0
 DA:89,0
 LF:116
-LH:0
+LH:2
 BRF:28
 BRH:0
 FNF:9
-FNH:0
+FNH:2
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Domain\Services\ProcessamentoHandler\GerarImagemHandler.cs
 FN:37,System.Boolean AudioGeraImagemWorker.Domain.Services.ProcessamentoHandler.GerarImagemHandler::PodeExecutar(AudioGeraImagemWorker.Domain.Entities.ProcessamentoCriacao)
@@ -531,26 +531,20 @@ FNF:3
 FNH:3
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\ApplicationDbContext.cs
-FN:13,Microsoft.EntityFrameworkCore.DbSet`1<AudioGeraImagem.Domain.Entities.Criacao> AudioGeraImagemWorker.Infra.ApplicationDbContext::get_Criacoes()
+FN:14,Microsoft.EntityFrameworkCore.DbSet`1<AudioGeraImagem.Domain.Entities.Criacao> AudioGeraImagemWorker.Infra.ApplicationDbContext::get_Criacoes()
 FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<AudioGeraImagem.Domain.Entities.Criacao> AudioGeraImagemWorker.Infra.ApplicationDbContext::get_Criacoes()
-DA:14,2
-FN:16,System.Void AudioGeraImagemWorker.Infra.ApplicationDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
-FNDA:1,System.Void AudioGeraImagemWorker.Infra.ApplicationDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
-DA:17,1
-DA:18,1
-DA:20,1
-DA:21,1
-FN:9,System.Void AudioGeraImagemWorker.Infra.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<AudioGeraImagemWorker.Infra.ApplicationDbContext>)
+DA:15,2
+FN:10,System.Void AudioGeraImagemWorker.Infra.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<AudioGeraImagemWorker.Infra.ApplicationDbContext>)
 FNDA:1,System.Void AudioGeraImagemWorker.Infra.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<AudioGeraImagemWorker.Infra.ApplicationDbContext>)
-DA:10,1
 DA:11,1
 DA:12,1
-LF:8
-LH:8
+DA:13,1
+LF:4
+LH:4
 BRF:0
 BRH:0
-FNF:3
-FNH:3
+FNF:2
+FNH:2
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\BucketManager.cs
 FN:11,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager::.ctor(AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters)
@@ -583,147 +577,124 @@ FNH:0
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\OpenAIVendor.cs
 FN:57,System.Exception AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::GerarException(AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse)
-FNDA:0,System.Exception AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::GerarException(AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse)
-DA:58,0
+FNDA:2,System.Exception AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::GerarException(AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse)
+DA:58,2
 FN:59,System.Collections.Generic.Dictionary`2<System.String,System.String> AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::AddHeaders()
-FNDA:0,System.Collections.Generic.Dictionary`2<System.String,System.String> AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::AddHeaders()
-DA:60,0
+FNDA:4,System.Collections.Generic.Dictionary`2<System.String,System.String> AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::AddHeaders()
+DA:60,4
 FN:14,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::.ctor(AudioGeraImagemWorker.Domain.Interfaces.Utility.IHttpHelper,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters)
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::.ctor(AudioGeraImagemWorker.Domain.Interfaces.Utility.IHttpHelper,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters)
-DA:15,0
-DA:16,0
-DA:17,0
-DA:18,0
-DA:19,0
-DA:20,0
+FNDA:4,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::.ctor(AudioGeraImagemWorker.Domain.Interfaces.Utility.IHttpHelper,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters)
+DA:15,4
+DA:16,4
+DA:17,4
+DA:18,4
+DA:19,4
+DA:20,4
 FN:22,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarImagem>d__3::MoveNext()
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarImagem>d__3::MoveNext()
-DA:23,0
-DA:24,0
-DA:25,0
-DA:26,0
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
-DA:32,0
-DA:34,0
-DA:35,0
-DA:37,0
-DA:38,0
-DA:39,0
-BRDA:34,249,0,0
-BRDA:34,249,1,0
+FNDA:2,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarImagem>d__3::MoveNext()
+DA:23,2
+DA:24,2
+DA:25,2
+DA:26,2
+DA:27,2
+DA:28,2
+DA:29,2
+DA:30,2
+DA:32,2
+DA:34,2
+DA:35,1
+DA:37,1
+DA:38,1
+DA:39,1
+BRDA:34,249,0,1
+BRDA:34,249,1,1
 FN:41,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarTranscricao>d__4::MoveNext()
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarTranscricao>d__4::MoveNext()
-DA:42,0
-DA:43,0
-DA:44,0
-DA:45,0
-DA:46,0
-DA:47,0
-DA:49,0
-DA:51,0
-DA:52,0
-DA:54,0
-DA:55,0
-DA:56,0
-BRDA:51,282,0,0
-BRDA:51,282,1,0
+FNDA:2,System.Void AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor/<GerarTranscricao>d__4::MoveNext()
+DA:42,2
+DA:43,2
+DA:44,2
+DA:45,2
+DA:46,2
+DA:47,2
+DA:49,2
+DA:51,2
+DA:52,1
+DA:54,1
+DA:55,1
+DA:56,1
+BRDA:51,282,0,1
+BRDA:51,282,1,1
 LF:34
-LH:0
+LH:34
 BRF:4
-BRH:0
+BRH:4
 FNF:5
-FNH:0
+FNH:5
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\OpenAIParameters.cs
-FN:10,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_SecretKey()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_SecretKey()
-DA:11,0
-FN:11,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_TranscriptionParameters()
-FNDA:0,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_TranscriptionParameters()
-DA:12,0
-FN:12,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_ImageGeneratorParameters()
-FNDA:0,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIParameters::get_ImageGeneratorParameters()
-DA:13,0
-FN:17,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Url()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Url()
-DA:18,0
-FN:18,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Model()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Model()
-DA:19,0
-LF:5
-LH:0
-BRF:0
-BRH:0
-FNF:5
-FNH:0
-end_of_record
-SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\ErrorResponse.cs
-FN:10,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse::get_error()
-FNDA:0,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse::get_error()
-DA:11,0
-FN:15,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_message()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_message()
-DA:16,0
-FN:16,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_type()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_type()
-DA:17,0
-FN:17,System.Object AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_param()
-FNDA:0,System.Object AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_param()
-DA:18,0
-FN:18,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_code()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_code()
-DA:19,0
-LF:5
-LH:0
-BRF:0
-BRH:0
-FNF:5
-FNH:0
-end_of_record
-SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\GerarImagemResponse.cs
-FN:10,System.Int32 AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_created()
-FNDA:0,System.Int32 AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_created()
-DA:11,0
-FN:11,System.Collections.Generic.List`1<AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum> AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_data()
-FNDA:0,System.Collections.Generic.List`1<AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum> AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_data()
-DA:12,0
-FN:16,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum::get_url()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum::get_url()
-DA:17,0
-LF:3
-LH:0
-BRF:0
-BRH:0
-FNF:3
-FNH:0
-end_of_record
-SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\GerarTranscricaoResponse.cs
-FN:10,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarTranscricaoResponse::get_text()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarTranscricaoResponse::get_text()
-DA:11,0
-LF:1
-LH:0
-BRF:0
-BRH:0
-FNF:1
-FNH:0
-end_of_record
-SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\AzureBlob\AzureBlobParameters.cs
-FN:10,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters::get_ConnectionString()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters::get_ConnectionString()
-DA:11,0
-FN:11,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters::get_ContainerName()
-FNDA:0,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters::get_ContainerName()
-DA:12,0
+FN:19,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Url()
+FNDA:12,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Url()
+DA:20,12
+FN:20,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Model()
+FNDA:12,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.OpenAIEndPointParameters::get_Model()
+DA:21,12
 LF:2
-LH:0
+LH:2
 BRF:0
 BRH:0
 FNF:2
-FNH:0
+FNH:2
+end_of_record
+SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\ErrorResponse.cs
+FN:10,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse::get_error()
+FNDA:14,AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse::get_error()
+DA:11,14
+FN:15,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_message()
+FNDA:8,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_message()
+DA:16,8
+FN:16,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_type()
+FNDA:8,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_type()
+DA:17,8
+FN:17,System.Object AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_param()
+FNDA:8,System.Object AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_param()
+DA:18,8
+FN:18,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_code()
+FNDA:8,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Error::get_code()
+DA:19,8
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:5
+FNH:5
+end_of_record
+SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\GerarImagemResponse.cs
+FN:10,System.Int32 AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_created()
+FNDA:3,System.Int32 AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_created()
+DA:11,3
+FN:11,System.Collections.Generic.List`1<AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum> AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_data()
+FNDA:4,System.Collections.Generic.List`1<AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum> AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarImagemResponse::get_data()
+DA:12,4
+FN:16,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum::get_url()
+FNDA:4,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.Datum::get_url()
+DA:17,4
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\Entities\OpenAI\Response\GerarTranscricaoResponse.cs
+FN:10,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarTranscricaoResponse::get_text()
+FNDA:4,System.String AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.GerarTranscricaoResponse::get_text()
+DA:11,4
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Repositories\CriacaoRepository.cs
 FN:8,System.Void AudioGeraImagemWorker.Infra.Repositories.CriacaoRepository::.ctor(AudioGeraImagemWorker.Infra.ApplicationDbContext)
@@ -994,47 +965,6 @@ BRF:0
 BRH:0
 FNF:1
 FNH:0
-end_of_record
-SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Configurations\CriacaoConfiguration.cs
-FN:9,System.Void AudioGeraImagemWorker.Infra.Configurations.CriacaoConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<AudioGeraImagem.Domain.Entities.Criacao>)
-FNDA:1,System.Void AudioGeraImagemWorker.Infra.Configurations.CriacaoConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<AudioGeraImagem.Domain.Entities.Criacao>)
-DA:10,1
-DA:11,1
-DA:12,1
-DA:13,1
-DA:14,1
-DA:15,1
-DA:16,1
-DA:17,1
-DA:18,1
-DA:19,1
-DA:20,1
-DA:21,1
-DA:22,1
-DA:23,1
-DA:24,1
-DA:25,1
-DA:26,1
-DA:27,1
-DA:29,1
-DA:30,1
-DA:31,1
-DA:32,1
-DA:33,1
-DA:34,1
-DA:35,1
-DA:36,1
-DA:37,1
-DA:38,1
-DA:39,1
-DA:40,2
-DA:41,1
-LF:31
-LH:31
-BRF:0
-BRH:0
-FNF:1
-FNH:1
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.UseCases\Criacoes\Processar\ProcessarCriacaoCommand.cs
 FN:8,System.Guid AudioGeraImagemWorker.UseCases.Criacoes.Processar.ProcessarCriacaoCommand::get_CriacaoId()

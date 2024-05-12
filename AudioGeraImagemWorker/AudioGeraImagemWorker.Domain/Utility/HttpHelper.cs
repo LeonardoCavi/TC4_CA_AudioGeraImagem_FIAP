@@ -31,8 +31,8 @@ namespace AudioGeraImagemWorker.Domain.Utility
 
     public class HttpHelper : IHttpHelper
     {
-        private readonly ILogger<HttpHelper> _logger;
         private readonly string className = typeof(HttpHelper).Name;
+        private readonly ILogger<HttpHelper> _logger;
         private readonly IAsyncPolicy _resiliencePolicy;
 
         public HttpHelper(ILogger<HttpHelper> logger,

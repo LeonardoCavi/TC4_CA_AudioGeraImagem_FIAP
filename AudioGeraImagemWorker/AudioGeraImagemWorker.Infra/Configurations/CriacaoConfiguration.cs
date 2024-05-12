@@ -1,9 +1,11 @@
 ﻿using AudioGeraImagem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Infra.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class CriacaoConfiguration : IEntityTypeConfiguration<Criacao>
     {
         public void Configure(EntityTypeBuilder<Criacao> builder)
