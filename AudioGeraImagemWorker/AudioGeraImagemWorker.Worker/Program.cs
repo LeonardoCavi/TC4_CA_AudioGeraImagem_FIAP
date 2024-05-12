@@ -1,5 +1,6 @@
 using AudioGeraImagemWorker.Worker;
 using AudioGeraImagemWorker.Worker.Configurations;
+using System.Diagnostics.CodeAnalysis;
 
 var hostBuilder = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((hostingContext, config) =>
@@ -32,3 +33,6 @@ var hostBuilder = Host.CreateDefaultBuilder(args)
 hostBuilder.UseSerilogConfiguration();
 var host = hostBuilder.Build();
 host.Run();
+
+[ExcludeFromCodeCoverage]
+public static partial class Program { }

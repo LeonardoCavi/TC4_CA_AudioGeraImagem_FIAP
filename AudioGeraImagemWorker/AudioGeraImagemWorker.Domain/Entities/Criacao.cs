@@ -14,20 +14,5 @@ namespace AudioGeraImagem.Domain.Entities
         public List<ProcessamentoCriacao> ProcessamentosCriacao { get; set; }
 
         public Criacao() { }
-
-        public Criacao(string descricao)
-        {
-            Id = Guid.NewGuid();
-            Descricao = descricao;
-            InstanteCriacao = DateTime.Now;
-            ProcessamentosCriacao = new()
-            {
-                new()
-                {
-                    Estado = EstadoProcessamento.Recebido,
-                    InstanteCriacao = DateTime.Now
-                }
-            };
-        }
     }
 }
