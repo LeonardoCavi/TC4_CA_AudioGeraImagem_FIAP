@@ -33,10 +33,10 @@ namespace AudioGeraImagemWorker.Domain.Utility
     {
         private readonly ILogger<HttpHelper> _logger;
         private readonly string className = typeof(HttpHelper).Name;
-        private readonly AsyncPolicy _resiliencePolicy;
+        private readonly IAsyncPolicy _resiliencePolicy;
 
         public HttpHelper(ILogger<HttpHelper> logger,
-                        AsyncPolicy resiliencePolicy)
+                        IAsyncPolicy resiliencePolicy)
         {
             _logger = logger;
             _resiliencePolicy = resiliencePolicy;

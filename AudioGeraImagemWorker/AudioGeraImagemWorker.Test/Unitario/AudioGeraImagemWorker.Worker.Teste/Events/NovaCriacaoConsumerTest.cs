@@ -41,6 +41,7 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.Worker.Teste
             //Assert
             await _mediatorMock.Received().Send(Arg.Is<ProcessarCriacaoCommand>(x =>
                 x.CriacaoId == criacaoMessageMock.CriacaoId &&
+                x.Payload == criacaoMessageMock.Payload &&
                 !x.Retentativa));
         }
     }
