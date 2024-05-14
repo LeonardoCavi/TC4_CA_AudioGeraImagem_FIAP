@@ -531,33 +531,34 @@ FNF:2
 FNH:2
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\BucketManager.cs
-FN:11,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager::.ctor(AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters)
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager::.ctor(AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters)
-DA:12,0
-DA:13,0
-DA:14,0
-DA:15,0
-FN:25,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<ArmazenarObjeto>d__3::MoveNext()
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<ArmazenarObjeto>d__3::MoveNext()
-DA:26,0
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
-FN:17,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<GetBlobClient>d__2::MoveNext()
-FNDA:0,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<GetBlobClient>d__2::MoveNext()
-DA:18,0
-DA:19,0
-DA:20,0
-DA:21,0
-DA:22,0
-DA:23,0
-LF:15
-LH:0
+FN:13,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager::.ctor(Microsoft.Extensions.Azure.IAzureClientFactory`1<Azure.Storage.Blobs.BlobServiceClient>,AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters)
+FNDA:1,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager::.ctor(Microsoft.Extensions.Azure.IAzureClientFactory`1<Azure.Storage.Blobs.BlobServiceClient>,AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob.AzureBlobParameters)
+DA:14,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+FN:28,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<ArmazenarObjeto>d__4::MoveNext()
+FNDA:1,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<ArmazenarObjeto>d__4::MoveNext()
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+DA:33,1
+FN:20,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<GetBlobClient>d__3::MoveNext()
+FNDA:1,System.Void AudioGeraImagemWorker.Infra.Vendor.BucketManager/<GetBlobClient>d__3::MoveNext()
+DA:21,1
+DA:22,1
+DA:23,1
+DA:24,1
+DA:25,1
+DA:26,1
+LF:16
+LH:16
 BRF:0
 BRH:0
 FNF:3
-FNH:0
+FNH:3
 end_of_record
 SF:E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker\AudioGeraImagemWorker.Infra\Vendor\OpenAIVendor.cs
 FN:57,System.Exception AudioGeraImagemWorker.Infra.Vendor.OpenAIVendor::GerarException(AudioGeraImagemWorker.Infra.Vendor.Entities.OpenAI.Response.ErrorResponse)

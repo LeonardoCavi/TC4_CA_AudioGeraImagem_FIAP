@@ -2,21 +2,24 @@
 using AudioGeraImagemWorker.Infra.Vendor.Entities.AzureBlob;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
+using Microsoft.Extensions.Azure;
 
 namespace AudioGeraImagemWorker.Infra.Vendor
 {
     public class BucketManager : IBucketManager
     {
+        private readonly IAzureClientFactory<BlobServiceClient> _azureClientFactory;
         private readonly AzureBlobParameters _parameters;
 
-        public BucketManager(AzureBlobParameters parameters)
+        public BucketManager(IAzureClientFactory<BlobServiceClient> azureClientFactory, AzureBlobParameters parameters)
         {
+            _azureClientFactory = azureClientFactory;
             _parameters = parameters;
         }
 
         private async Task<BlobClient> GetBlobClient(string blobName)
         {
-            BlobServiceClient blobServiceClient = new BlobServiceClient(_parameters.ConnectionString);
+            BlobServiceClient blobServiceClient = _azureClientFactory.CreateClient("MyBlobService");
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(_parameters.ContainerName);
             await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
             return containerClient.GetBlobClient(blobName);
