@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Polly;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 
@@ -33,12 +34,15 @@ namespace AudioGeraImagemWorker.Domain.Utility
     {
         private readonly string className = typeof(HttpHelper).Name;
         private readonly ILogger<HttpHelper> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly IAsyncPolicy _resiliencePolicy;
 
         public HttpHelper(ILogger<HttpHelper> logger,
+                        IHttpClientFactory httpClientFactory,
                         IAsyncPolicy resiliencePolicy)
         {
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
             _resiliencePolicy = resiliencePolicy;
         }
 
@@ -92,7 +96,7 @@ namespace AudioGeraImagemWorker.Domain.Utility
                                                                     T body,
                                                                     Dictionary<string, string> headers = null)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = _httpClientFactory.CreateClient())
             {
                 HttpResponseMessage result = null;
                 if (headers != null)

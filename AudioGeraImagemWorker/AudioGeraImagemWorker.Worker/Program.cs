@@ -20,6 +20,7 @@ var hostBuilder = Host.CreateDefaultBuilder(args)
         IConfiguration configuration = hostContext.Configuration;
 
         services.AddRetryPolicy();
+        services.AddHttpClient();
         services.AddParameters(configuration);
         services.AddDepencyInjection();
         services.AddSerilogConfiguration(configuration);
