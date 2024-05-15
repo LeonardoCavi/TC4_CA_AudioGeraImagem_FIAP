@@ -53,10 +53,6 @@ namespace AudioGeraImagemWorker.Domain.Services.ProcessamentoHandler
 
             switch (ultimoProcessamento.Estado)
             {
-                case EstadoProcessamento.Recebido:
-                    novoEstado = EstadoProcessamento.SalvandoAudio;
-                    break;
-
                 case EstadoProcessamento.SalvandoAudio:
                     novoEstado = EstadoProcessamento.GerandoTexto;
                     break;

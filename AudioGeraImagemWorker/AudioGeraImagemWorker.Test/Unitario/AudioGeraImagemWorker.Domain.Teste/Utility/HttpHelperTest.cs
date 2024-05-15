@@ -39,7 +39,7 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.Domain.Teste
         }
 
         [Fact]
-        public async Task GetBytes_Sucessso()
+        public async Task GetBytes_Sucesso()
         {
             //Arrange
             var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
@@ -129,7 +129,30 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.Domain.Teste
         }
 
         [Fact]
-        public async Task Send_PostAsync_OK()
+        public async Task Send_GetAsync_Exception()
+        {
+            //Arrange
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.ServiceUnavailable, "timeout exception");
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Get, string.Empty);
+
+            //Assert
+            Assert.Equal(CodeHttp.ServerError, resultado.Code);
+            Assert.Null(resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_PostAsync_Created()
         {
             //Arrange
             var headers = new Dictionary<string, string>
@@ -139,7 +162,7 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.Domain.Teste
             var requestJson = new { Teste = 1 };
             var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
 
-            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.OK);
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.Created);
 
             var httpClientMock = new HttpClient(messageHandler);
 
@@ -184,6 +207,144 @@ namespace AudioGeraImagemWorker.Test.Unitario.AudioGeraImagemWorker.Domain.Teste
 
             //Assert
             Assert.Equal(CodeHttp.BadRequest, resultado.Code);
+            Assert.Equal(responseJson, resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_PutAsync_Accepted()
+        {
+            //Arrange
+            var headers = new Dictionary<string, string>
+            {
+                { "Authorization", "Token" }
+            };
+            var requestJson = new { Teste = 1 };
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.Accepted);
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Put, requestJson, headers);
+
+            //Assert
+            Assert.Equal(CodeHttp.Success, resultado.Code);
+            Assert.Equal(responseJson, resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_PutAsync_NoContent()
+        {
+            //Arrange
+            var headers = new Dictionary<string, string>
+            {
+                { "Authorization", "Token" }
+            };
+            var requestJson = new { Teste = 1 };
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.NoContent);
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Put, requestJson, headers);
+
+            //Assert
+            Assert.Equal(CodeHttp.Success, resultado.Code);
+            Assert.Equal(responseJson, resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_PutAsync_ResetContent()
+        {
+            //Arrange
+            var headers = new Dictionary<string, string>
+            {
+                { "Authorization", "Token" }
+            };
+            var requestJson = new { Teste = 1 };
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.ResetContent);
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Put, requestJson, headers);
+
+            //Assert
+            Assert.Equal(CodeHttp.Success, resultado.Code);
+            Assert.Equal(responseJson, resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_DeleteAsync_InternalServerError()
+        {
+            //Arrange
+            var headers = new Dictionary<string, string>
+            {
+                { "Authorization", "Token" }
+            };
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.InternalServerError);
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Delete, string.Empty, headers);
+
+            //Assert
+            Assert.Equal(CodeHttp.ServerError, resultado.Code);
+            Assert.Equal(responseJson, resultado.Received);
+        }
+
+        [Fact]
+        public async Task Send_DeleteAsync_Others()
+        {
+            //Arrange
+            var headers = new Dictionary<string, string>
+            {
+                { "Authorization", "Token" }
+            };
+            var responseJson = JsonSerializer.Serialize(new { Teste = 1 });
+
+            var messageHandler = new MockHttpMessageHandler(responseJson, HttpStatusCode.Conflict);
+
+            var httpClientMock = new HttpClient(messageHandler);
+
+            _httpClientFactory.CreateClient()
+                .Returns(httpClientMock);
+
+            var httpHelper = _fixture.Create<HttpHelper>();
+
+            //Act
+            var resultado = await httpHelper.Send(url, VerboHttp.Delete, string.Empty, headers);
+
+            //Assert
+            Assert.Equal(CodeHttp.Others, resultado.Code);
             Assert.Equal(responseJson, resultado.Received);
         }
     }

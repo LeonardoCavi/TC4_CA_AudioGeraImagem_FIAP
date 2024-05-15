@@ -6,19 +6,25 @@ namespace AudioGeraImagemWorker.Test.Fake
     {
         private readonly string _response;
         private readonly HttpStatusCode _statusCode;
-        public MockHttpMessageHandler(string response, HttpStatusCode statusCode)
+        private readonly string _exceptionMessage;
+        public MockHttpMessageHandler(string response, HttpStatusCode statusCode, string exceptionMessage = "")
         {
             _response = response;
             _statusCode = statusCode;
+            _exceptionMessage = exceptionMessage;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            return new HttpResponseMessage
+
+            if (!string.IsNullOrEmpty(_exceptionMessage))
+                throw new Exception(_exceptionMessage);
+
+            return await Task.FromResult(new HttpResponseMessage
             {
                 StatusCode = _statusCode,
                 Content = new StringContent(_response)
-            };
+            });
         }
     }
 }
