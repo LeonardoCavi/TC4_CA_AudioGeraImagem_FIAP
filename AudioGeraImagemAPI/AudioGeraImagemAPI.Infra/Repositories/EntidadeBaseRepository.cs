@@ -32,15 +32,5 @@ namespace AudioGeraImagemAPI.Infra.Repositories
             await _context.AddAsync(entidade);
             await _context.SaveChangesAsync();
         }
-
-        public async Task<TEntidade> Obter(string id)
-        {
-            return await _dbSet.FindAsync(id);
-        }
-
-        public async Task<ICollection<TEntidade>> ObterTodos()
-        {
-            return await _dbSet.ToListAsync();
-        }
     }
 }

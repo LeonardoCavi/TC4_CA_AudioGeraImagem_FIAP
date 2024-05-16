@@ -1,12 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AudioGeraImagemAPI.Domain.Interfaces.Utility;
+using Microsoft.Extensions.Logging;
 using Polly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace AudioGeraImagemAPI.Domain.Utility
 {
@@ -32,16 +29,19 @@ namespace AudioGeraImagemAPI.Domain.Utility
         public string Received { get; set; }
     }
 
-    public class HttpHelper
+    public class HttpHelper : IHttpHelper
     {
-        private readonly ILogger<HttpHelper> _logger;
         private readonly string className = typeof(HttpHelper).Name;
-        private readonly AsyncPolicy _resiliencePolicy;
+        private readonly ILogger<HttpHelper> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IAsyncPolicy _resiliencePolicy;
 
         public HttpHelper(ILogger<HttpHelper> logger,
-                        AsyncPolicy resiliencePolicy)
+                        IHttpClientFactory httpClientFactory,
+                        IAsyncPolicy resiliencePolicy)
         {
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
             _resiliencePolicy = resiliencePolicy;
         }
 
@@ -95,7 +95,7 @@ namespace AudioGeraImagemAPI.Domain.Utility
                                                                     T body,
                                                                     Dictionary<string, string> headers = null)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = _httpClientFactory.CreateClient())
             {
                 HttpResponseMessage result = null;
                 if (headers != null)

@@ -1,10 +1,12 @@
 using AudioGeraImagemAPI.API.Configurations;
+using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSerilogConfiguration(builder.Configuration);
 builder.Host.UseSerilogConfiguration();
+builder.Services.AddHttpClient();
 builder.Services.AddMediatRConfiguration();
 builder.Services.AddRetryPolicy();
 builder.Services.AddControllers();
@@ -30,3 +32,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+[ExcludeFromCodeCoverage]
+public static partial class Program { }

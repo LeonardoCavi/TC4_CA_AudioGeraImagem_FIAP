@@ -1,12 +1,9 @@
 ﻿using AudioGeraImagemAPI.Domain.Utility.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemAPI.Domain.Utility.Factory
 {
+    [ExcludeFromCodeCoverage]
     public static class ResultadoOperacaoFactory
     {
         public static ResultadoOperacao<T> Criar<T>(bool sucesso, string mensagemErro, T objeto)

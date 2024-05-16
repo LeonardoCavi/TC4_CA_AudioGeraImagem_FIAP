@@ -1,10 +1,8 @@
 ﻿using AudioGeraImagemAPI.Domain.Entities;
 using AudioGeraImagemAPI.Domain.Enums;
 using AudioGeraImagemAPI.Domain.Interfaces.Repositories;
-using AudioGeraImagemAPI.UseCases.Criacoes.Listar;
 using AudioGeraImagemAPI.UseCases.Criacoes.Obter;
 using NSubstitute;
-using System.Linq.Expressions;
 
 namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.UseCases.Test.Criacoes.Obter
 {

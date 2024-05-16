@@ -3,7 +3,6 @@ using AudioGeraImagemAPI.Domain.Enums;
 using AudioGeraImagemAPI.Infra;
 using AudioGeraImagemAPI.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.Infra.Test.Repositories
 {
@@ -14,7 +13,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.Infra.Test.Reposit
         public CriacaoRepositoryTests()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: "AudioGeraImagemTestsCriacoes")
+            .UseInMemoryDatabase(databaseName: "AudioGeraImagemTestsCriacoes_2")
             .Options;
 
             _context = new ApplicationDbContext(options);

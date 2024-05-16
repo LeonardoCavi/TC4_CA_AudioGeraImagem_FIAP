@@ -28,7 +28,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
         { }
 
         #region [GerarImagem]
-        
+
         [Fact]
         public async Task GerarImagem_Teste_Sucesso()
         {
@@ -52,7 +52,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             // Assert
             var acceptedResult = resultado as AcceptedResult;
             var resultadoGuid = (Guid)acceptedResult.Value;
-            
+
             Assert.NotNull(acceptedResult);
             Assert.NotNull(resultadoGuid);
             Assert.Equal(guid, resultadoGuid);
@@ -84,7 +84,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             Assert.NotNull(badRequestObjectResult);
             Assert.Equal((int)HttpStatusCode.BadRequest, badRequestObjectResult.StatusCode);
         }
-        
+
         [Fact]
         public async Task GerarImagem_Teste_Exception()
         {
@@ -105,13 +105,13 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             // Act
             var resultado = await controller.GerarImagem(geraImagemMock);
             var objectResult = resultado as ObjectResult;
-            
+
             // Assert
             Assert.NotNull(objectResult);
             Assert.Equal((int)HttpStatusCode.InternalServerError, objectResult.StatusCode);
         }
 
-        #endregion
+        #endregion [GerarImagem]
 
         #region [BuscarCriacoes]
 
@@ -187,7 +187,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             Assert.Equal((int)HttpStatusCode.InternalServerError, objectResult.StatusCode);
         }
 
-        #endregion
+        #endregion [BuscarCriacoes]
 
         #region [ObterCriacao]
 
@@ -269,7 +269,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             Assert.Equal((int)HttpStatusCode.InternalServerError, objectResult.StatusCode);
         }
 
-        #endregion
+        #endregion [ObterCriacao]
 
         #region [ObterImagem]
 
@@ -279,7 +279,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             // Arrange
             var guid = Guid.NewGuid();
             var id = guid.ToString();
-            using (Stream stream = new MemoryStream()) 
+            using (Stream stream = new MemoryStream())
             {
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
@@ -299,7 +299,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
                     Assert.Equal(stream, fileStreamResult.FileStream);
                     Assert.Equal("image/jpeg", fileStreamResult.ContentType);
                 }
-            }                           
+            }
         }
 
         [Fact]
@@ -314,7 +314,7 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
                 var resultadoOperacao = new ResultadoOperacao<Stream>(false, "Mock de falha", stream);
                 _mediator.Send(Arg.Any<ObterImagemQuery>()).Returns(resultadoOperacao);
                 var controller = new CriacaoController(_mediator, _logger);
-                
+
                 // Act
                 var resultado = await controller.ObterImagem(id);
                 var badRequestObjectResult = resultado as BadRequestObjectResult;
@@ -348,6 +348,6 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Controlle
             }
         }
 
-        #endregion
+        #endregion [ObterImagem]
     }
 }

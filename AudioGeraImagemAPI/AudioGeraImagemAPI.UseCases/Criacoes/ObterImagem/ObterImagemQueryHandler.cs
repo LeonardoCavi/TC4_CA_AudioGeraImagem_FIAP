@@ -1,4 +1,5 @@
 ﻿using AudioGeraImagemAPI.Domain.Interfaces.Repositories;
+using AudioGeraImagemAPI.Domain.Interfaces.Utility;
 using AudioGeraImagemAPI.Domain.Utility;
 using AudioGeraImagemAPI.Domain.Utility.DTO;
 using AudioGeraImagemAPI.Domain.Utility.Factory;
@@ -9,9 +10,9 @@ namespace AudioGeraImagemAPI.UseCases.Criacoes.ObterImagem
     public class ObterImagemQueryHandler : IRequestHandler<ObterImagemQuery, ResultadoOperacao<Stream>>
     {
         private readonly ICriacaoRepository _repository;
-        private readonly HttpHelper _httpHelper;
+        private readonly IHttpHelper _httpHelper;
 
-        public ObterImagemQueryHandler(ICriacaoRepository repository, HttpHelper httpHelper)
+        public ObterImagemQueryHandler(ICriacaoRepository repository, IHttpHelper httpHelper)
         {
             _repository = repository;
             _httpHelper = httpHelper;

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Logging;
 using Polly;
+using AudioGeraImagemAPI.Domain.Interfaces.Utility;
 
 namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Configurations
 {
@@ -25,13 +26,19 @@ namespace AudioGeraImagemAPI.Test.Unitario.AudioGeraImagemAPI.API.Test.Configura
             services.AddSingleton(typeof(ILogger<HttpHelper>), NullLogger<HttpHelper>.Instance);
             services.AddSingleton<AsyncPolicy>(Policy.NoOpAsync());
 
+            // Adicionando IHttpClientFactory
+            services.AddHttpClient();
+
+            // Adicionando IAsyncPolicy
+            services.AddSingleton<IAsyncPolicy>(Policy.NoOpAsync());
+
             // Act
             DependencyInjectionConfiguration.AddDepencyInjection(services);
 
             // Assert
             var serviceProvider = services.BuildServiceProvider();
             var criacaoRepository = serviceProvider.GetService<ICriacaoRepository>();
-            var httpHelper = serviceProvider.GetService<HttpHelper>();
+            var httpHelper = serviceProvider.GetService<IHttpHelper>();
 
             Assert.NotNull(criacaoRepository);
             Assert.NotNull(httpHelper);
