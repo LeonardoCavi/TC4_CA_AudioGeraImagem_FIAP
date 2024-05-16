@@ -1,0 +1,2 @@
+1. dotnet test /p:ExcludeByFile="/Migrations/.cs"
+2. reportgenerator "-reports:lcov.info" "-targetdir:coveragereport" -reporttypes:Html

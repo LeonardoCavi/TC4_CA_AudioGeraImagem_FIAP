@@ -1,5 +1,8 @@
-﻿namespace AudioGeraImagem.Domain.Messages
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AudioGeraImagem.Domain.Messages
 {
+    [ExcludeFromCodeCoverage]
     public class CriacaoMessage
     {
         public Guid CriacaoId { get; set; }
