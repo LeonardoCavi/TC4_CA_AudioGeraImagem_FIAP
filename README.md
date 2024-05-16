@@ -12,6 +12,9 @@ disponibilizada para consumo.
 - ➤ AudioGeraImagemAPI</br>
 - ➤ AudioGeraImagemWorker</br>
 
+<h2 align="left">Vídeo de Apresentação</h2>
+[EM CONSTRUÇÃO]
+
 <h2 align="left">Diagrama do Projeto</h2>
 <img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Diagramas/Diagrama_integracoes.png"></img></br>
 
@@ -103,7 +106,8 @@ disponibilizada para consumo.
 -- ➤ 2. Realizar testes para garantir que caso haja mais de 3 tentativas, o processo seja movido para falha.</br>
 
 <h2 align="left">Testes</h3>
-[EM CONSTRUÇÃO} Este projeto inclui testes automatizados para garantir o funcionamento correto da API e Worker (Microsserviço)...
+➤ <a href="https://leonardocavi.github.io/TC4_CA_AudioGeraImagem_FIAP/AudioGeraImagemAPI/AudioGeraImagemAPI.Test/coveragereport/index.html"> Testes de Cobertura da API</a></br>
+➤ <a href="https://leonardocavi.github.io/TC4_CA_AudioGeraImagem_FIAP/AudioGeraImagemWorker/AudioGeraImagemWorker.Test/coveragereport/index.html"> Testes de Cobertura do Microsserviço (Worker)</a>
 
 <h2 align="left">Documentação do Projeto</h2>
 <h4 align="left">Projeto - AudioGeraImagemAPI</h4>
