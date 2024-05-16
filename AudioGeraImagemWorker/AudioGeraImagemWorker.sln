@@ -11,13 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. DOMAIN", "3. DOMAIN", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. INFRA", "4. INFRA", "{DF638C16-B024-4C30-B447-B82B98154358}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Worker", "AudioGeraImagemWorker.Worker\AudioGeraImagemWorker.Worker.csproj", "{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.Worker", "AudioGeraImagemWorker.Worker\AudioGeraImagemWorker.Worker.csproj", "{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Application", "AudioGeraImagemWorker.Application\AudioGeraImagemWorker.Application.csproj", "{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.Domain", "AudioGeraImagemWorker.Domain\AudioGeraImagemWorker.Domain.csproj", "{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Domain", "AudioGeraImagemWorker.Domain\AudioGeraImagemWorker.Domain.csproj", "{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.Infra", "AudioGeraImagemWorker.Infra\AudioGeraImagemWorker.Infra.csproj", "{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Infra", "AudioGeraImagemWorker.Infra\AudioGeraImagemWorker.Infra.csproj", "{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemWorker.UseCases", "AudioGeraImagemWorker.UseCases\AudioGeraImagemWorker.UseCases.csproj", "{7971074D-A93D-450E-AD9B-046DD5216E39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. TEST", "5. TEST", "{51522FC1-8222-4FDA-8F37-E3AE8E3AC60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGeraImagemWorker.Test", "AudioGeraImagemWorker.Test\AudioGeraImagemWorker.Test.csproj", "{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +33,6 @@ Global
 		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +41,24 @@ Global
 		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7971074D-A93D-450E-AD9B-046DD5216E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7971074D-A93D-450E-AD9B-046DD5216E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7971074D-A93D-450E-AD9B-046DD5216E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7971074D-A93D-450E-AD9B-046DD5216E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7787CBB6-AEB9-4F5F-B906-3A5489F739E9} = {03BBB730-8985-43FF-ABB3-411281E3C0DA}
-		{9A0CC650-C4AC-4656-B18C-B99B59EAE31B} = {95920062-1673-4325-8541-087B4A864745}
 		{0EA103AE-673E-4DD3-B5E8-E411CAA0908B} = {D4C95C09-E09A-4AE6-8C15-3ADC50751F5A}
 		{DD98BA41-494A-4C6B-A637-78F6D7C59DF9} = {DF638C16-B024-4C30-B447-B82B98154358}
+		{7971074D-A93D-450E-AD9B-046DD5216E39} = {95920062-1673-4325-8541-087B4A864745}
+		{6FE9AA9D-52E8-4D27-BFCB-BE299FB1356B} = {51522FC1-8222-4FDA-8F37-E3AE8E3AC60C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35C4E5AC-3D2E-420E-9B68-834B31AEE674}

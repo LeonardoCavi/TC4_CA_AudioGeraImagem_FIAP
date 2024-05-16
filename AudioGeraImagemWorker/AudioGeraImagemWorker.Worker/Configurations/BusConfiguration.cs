@@ -1,9 +1,10 @@
 ﻿using AudioGeraImagemWorker.Worker.Events;
 using MassTransit;
-using Quartz;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class BusConfiguration
     {
         public static void AddBusConfiguration(this IServiceCollection services, IConfiguration configuration)
@@ -32,19 +33,19 @@ namespace AudioGeraImagemWorker.Worker.Configurations
 
                     cfg.ReceiveEndpoint(fila, e =>
                     {
-                        e.ConfigureConsumer<NovoComandoConsumer>(context);
+                        e.ConfigureConsumer<NovaCriacaoConsumer>(context);
                     });
 
                     cfg.ReceiveEndpoint(filaRetentativa, e =>
                     {
-                        e.ConfigureConsumer<RetentativaComandoConsumer>(context);
+                        e.ConfigureConsumer<RetentativaCriacaoConsumer>(context);
                     });
 
                     cfg.ConfigureEndpoints(context);
                 });
 
-                x.AddConsumer<NovoComandoConsumer>();
-                x.AddConsumer<RetentativaComandoConsumer>();
+                x.AddConsumer<NovaCriacaoConsumer>();
+                x.AddConsumer<RetentativaCriacaoConsumer>();
             });
         }
     }

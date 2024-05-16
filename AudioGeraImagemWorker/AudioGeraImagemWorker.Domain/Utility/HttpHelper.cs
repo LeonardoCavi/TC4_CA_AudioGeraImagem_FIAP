@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AudioGeraImagemWorker.Domain.Interfaces.Utility;
+using Microsoft.Extensions.Logging;
 using Polly;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 
@@ -28,16 +30,19 @@ namespace AudioGeraImagemWorker.Domain.Utility
         public string Received { get; set; }
     }
 
-    public class HttpHelper
+    public class HttpHelper : IHttpHelper
     {
-        private readonly ILogger<HttpHelper> _logger;
         private readonly string className = typeof(HttpHelper).Name;
-        private readonly AsyncPolicy _resiliencePolicy;
+        private readonly ILogger<HttpHelper> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IAsyncPolicy _resiliencePolicy;
 
         public HttpHelper(ILogger<HttpHelper> logger,
-                        AsyncPolicy resiliencePolicy)
+                        IHttpClientFactory httpClientFactory,
+                        IAsyncPolicy resiliencePolicy)
         {
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
             _resiliencePolicy = resiliencePolicy;
         }
 
@@ -91,9 +96,11 @@ namespace AudioGeraImagemWorker.Domain.Utility
                                                                     T body,
                                                                     Dictionary<string, string> headers = null)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = _httpClientFactory.CreateClient())
             {
                 HttpResponseMessage result = null;
+                var jsonRequest = string.Empty;
+
                 if (headers != null)
                 {
                     foreach (var header in headers)
@@ -113,7 +120,7 @@ namespace AudioGeraImagemWorker.Domain.Utility
                             result = await httpClient.PostAsync(url, multipartContent);
                         else
                         {
-                            var jsonRequest = JsonSerializer.Serialize(body);
+                            jsonRequest = JsonSerializer.Serialize(body);
                             StringContent contentPost = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
                             result = await httpClient.PostAsync(url, contentPost);
                             contentPost.Dispose();
@@ -121,17 +128,10 @@ namespace AudioGeraImagemWorker.Domain.Utility
                         break;
 
                     case VerboHttp.Put:
-                        if (body is null)
-                        {
-                            result = await httpClient.PutAsync(url, null);
-                        }
-                        else
-                        {
-                            var jsonRequest = JsonSerializer.Serialize(body);
-                            StringContent contentPut = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-                            result = await httpClient.PutAsync(url, contentPut);
-                            contentPut.Dispose();
-                        }
+                        jsonRequest = JsonSerializer.Serialize(body);
+                        StringContent contentPut = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+                        result = await httpClient.PutAsync(url, contentPut);
+                        contentPut.Dispose();
                         break;
 
                     case VerboHttp.Delete:
@@ -146,65 +146,33 @@ namespace AudioGeraImagemWorker.Domain.Utility
         private async Task<Response> ProcessAndAnalyzeResponse(HttpResponseMessage result, string uri)
         {
             Response response = new Response();
-            string content = string.Empty;
+            string content = await result.Content.ReadAsStringAsync();
 
-            try
+            switch (result.StatusCode)
             {
-                content = await result.Content.ReadAsStringAsync();
+                case HttpStatusCode.OK:
+                case HttpStatusCode.Created:
+                case HttpStatusCode.Accepted:
+                case HttpStatusCode.NoContent:
+                case HttpStatusCode.ResetContent:
+                    response.Code = CodeHttp.Success;
+                    response.Received = content;
+                    return response;
 
-                switch (result.StatusCode)
-                {
-                    case HttpStatusCode.OK:
-                        response.Code = CodeHttp.Success;
-                        response.Received = content;
-                        return response;
+                case HttpStatusCode.BadRequest:
+                    response.Code = CodeHttp.BadRequest;
+                    response.Received = content;
+                    return response;
 
-                    case HttpStatusCode.Created:
-                        response.Code = CodeHttp.Success;
-                        response.Received = content;
-                        return response;
+                case HttpStatusCode.InternalServerError:
+                    response.Code = CodeHttp.ServerError;
+                    response.Received = content;
+                    return response;
 
-                    case HttpStatusCode.Accepted:
-                        response.Code = CodeHttp.Success;
-                        response.Received = content;
-                        return response;
-
-                    case HttpStatusCode.NoContent:
-                        response.Code = CodeHttp.Success;
-                        response.Received = content;
-                        return response;
-
-                    case HttpStatusCode.ResetContent:
-                        response.Code = CodeHttp.Success;
-                        response.Received = content;
-                        return response;
-
-                    case HttpStatusCode.BadRequest:
-                        response.Code = CodeHttp.BadRequest;
-                        response.Received = content;
-                        return response;
-
-                    case HttpStatusCode.InternalServerError:
-                        response.Code = CodeHttp.ServerError;
-                        response.Received = content;
-                        return response;
-
-                    default:
-                        response.Code = CodeHttp.Others;
-                        response.Received = content;
-                        return response;
-                }
-            }
-            catch (Exception ex)
-            {
-                response.Code = CodeHttp.ServerError;
-                response.Received = ex.ToString();
-                return response;
-            }
-            finally
-            {
-                _logger.LogInformation($"{className}: ProcessAndAnalyzeResponse{Environment.NewLine}URL:{uri}{Environment.NewLine}Http Status Code:{result.StatusCode}{Environment.NewLine}Content:{content}");
-                result.Dispose();
+                default:
+                    response.Code = CodeHttp.Others;
+                    response.Received = content;
+                    return response;
             }
         }
     }

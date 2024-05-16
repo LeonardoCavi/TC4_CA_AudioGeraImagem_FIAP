@@ -1,13 +1,15 @@
 ﻿using Polly;
 using Polly.Retry;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class PollyConfiguration
     {
         public static void AddRetryPolicy(this IServiceCollection services)
         {
-            services.AddSingleton<AsyncPolicy>(
+            services.AddSingleton<IAsyncPolicy>(
                CreateWaitAndRetryPolicy(new[]
                {
                     TimeSpan.FromSeconds(2),

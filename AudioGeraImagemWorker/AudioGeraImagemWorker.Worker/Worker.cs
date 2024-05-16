@@ -1,16 +1,15 @@
-using MassTransit;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker
 {
+    [ExcludeFromCodeCoverage]
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IBus _bus;
 
-        public Worker(ILogger<Worker> logger, IBus bus)
+        public Worker(ILogger<Worker> logger)
         {
             _logger = logger;
-            _bus = bus;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

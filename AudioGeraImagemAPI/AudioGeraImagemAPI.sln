@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. INFRA", "4. INFRA", "{3B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.API", "AudioGeraImagemAPI.API\AudioGeraImagemAPI.API.csproj", "{ACC2ECE8-EF7E-498D-B683-80A712B6C6C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.Application", "AudioGeraImagemAPI.Application\AudioGeraImagemAPI.Application.csproj", "{9C540B26-6577-4662-BEC6-CA1FF09FAEF7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.Domain", "AudioGeraImagemAPI.Domain\AudioGeraImagemAPI.Domain.csproj", "{F485AE15-DAEA-4F2A-94E7-24465DFC961F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.Infra", "AudioGeraImagemAPI.Infra\AudioGeraImagemAPI.Infra.csproj", "{E4544896-3654-44C0-9BDC-0256EC7686B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioGeraImagemAPI.UseCases", "AudioGeraImagemAPI.UseCases\AudioGeraImagemAPI.UseCases.csproj", "{465782E7-53E0-4C44-A486-71BCD215710C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{ACC2ECE8-EF7E-498D-B683-80A712B6C6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC2ECE8-EF7E-498D-B683-80A712B6C6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC2ECE8-EF7E-498D-B683-80A712B6C6C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C540B26-6577-4662-BEC6-CA1FF09FAEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C540B26-6577-4662-BEC6-CA1FF09FAEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C540B26-6577-4662-BEC6-CA1FF09FAEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C540B26-6577-4662-BEC6-CA1FF09FAEF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F485AE15-DAEA-4F2A-94E7-24465DFC961F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F485AE15-DAEA-4F2A-94E7-24465DFC961F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F485AE15-DAEA-4F2A-94E7-24465DFC961F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +37,19 @@ Global
 		{E4544896-3654-44C0-9BDC-0256EC7686B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4544896-3654-44C0-9BDC-0256EC7686B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4544896-3654-44C0-9BDC-0256EC7686B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{465782E7-53E0-4C44-A486-71BCD215710C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465782E7-53E0-4C44-A486-71BCD215710C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465782E7-53E0-4C44-A486-71BCD215710C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465782E7-53E0-4C44-A486-71BCD215710C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ACC2ECE8-EF7E-498D-B683-80A712B6C6C2} = {2CF26013-BE34-4EA9-93DB-74041064861E}
-		{9C540B26-6577-4662-BEC6-CA1FF09FAEF7} = {E4DCBE81-0AE9-49E2-97DD-6BFFD7D681F3}
 		{F485AE15-DAEA-4F2A-94E7-24465DFC961F} = {6C7C191D-65EC-4745-84AD-E5B723B24893}
 		{E4544896-3654-44C0-9BDC-0256EC7686B6} = {3BA9797F-E4DF-4797-8875-58DE688D01A5}
+		{465782E7-53E0-4C44-A486-71BCD215710C} = {E4DCBE81-0AE9-49E2-97DD-6BFFD7D681F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {532B4F96-F1C2-432C-80B2-DF06976ACDC3}

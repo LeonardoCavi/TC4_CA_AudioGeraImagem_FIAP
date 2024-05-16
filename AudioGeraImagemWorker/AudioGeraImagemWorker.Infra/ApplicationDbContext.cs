@@ -2,6 +2,7 @@
 using AudioGeraImagemWorker.Domain.Entities;
 using AudioGeraImagemWorker.Infra.Configurations;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Infra
 {
@@ -11,13 +12,14 @@ namespace AudioGeraImagemWorker.Infra
         {
         }
 
-        public DbSet<Comando> Comandos { get; set; }
+        public DbSet<Criacao> Criacoes { get; set; }
 
+        [ExcludeFromCodeCoverage]
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new ComandoConfiguration());
+            modelBuilder.ApplyConfiguration(new CriacaoConfiguration());
         }
     }
 }

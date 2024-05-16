@@ -1,8 +1,10 @@
 ﻿using Serilog.Events;
 using Serilog;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AudioGeraImagemWorker.Worker.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public static class SerilogConfiguration
     {
         public static void AddSerilogConfiguration(this IServiceCollection services,

@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddSerilogConfiguration(builder.Configuration);
 builder.Host.UseSerilogConfiguration();
+builder.Services.AddMediatRConfiguration();
 builder.Services.AddRetryPolicy();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

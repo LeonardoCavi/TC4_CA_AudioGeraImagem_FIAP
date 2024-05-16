@@ -22,7 +22,7 @@ namespace AudioGeraImagemWorker.Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AudioGeraImagem.Domain.Entities.Comando", b =>
+            modelBuilder.Entity("AudioGeraImagem.Domain.Entities.Criacao", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,18 +48,18 @@ namespace AudioGeraImagemWorker.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Comandos", (string)null);
+                    b.ToTable("Criacao", (string)null);
                 });
 
-            modelBuilder.Entity("AudioGeraImagem.Domain.Entities.Comando", b =>
+            modelBuilder.Entity("AudioGeraImagem.Domain.Entities.Criacao", b =>
                 {
-                    b.OwnsMany("AudioGeraImagemWorker.Domain.Entities.ProcessamentoComando", "ProcessamentosComandos", b1 =>
+                    b.OwnsMany("AudioGeraImagemWorker.Domain.Entities.ProcessamentoCriacao", "ProcessamentosCriacao", b1 =>
                         {
                             b1.Property<Guid>("Id")
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("uniqueidentifier");
 
-                            b1.Property<Guid>("ComandoId")
+                            b1.Property<Guid>("CriacaoId")
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Estado")
@@ -70,19 +70,19 @@ namespace AudioGeraImagemWorker.Infra.Migrations
                                 .HasColumnType("DATETIME2");
 
                             b1.Property<string>("MensagemErro")
-                                .HasColumnType("VARCHAR(256)");
+                                .HasColumnType("VARCHAR(MAX)");
 
                             b1.HasKey("Id");
 
-                            b1.HasIndex("ComandoId");
+                            b1.HasIndex("CriacaoId");
 
-                            b1.ToTable("ProcessamentoComandos", (string)null);
+                            b1.ToTable("ProcessamentosCriacao", (string)null);
 
                             b1.WithOwner()
-                                .HasForeignKey("ComandoId");
+                                .HasForeignKey("CriacaoId");
                         });
 
-                    b.Navigation("ProcessamentosComandos");
+                    b.Navigation("ProcessamentosCriacao");
                 });
 #pragma warning restore 612, 618
         }

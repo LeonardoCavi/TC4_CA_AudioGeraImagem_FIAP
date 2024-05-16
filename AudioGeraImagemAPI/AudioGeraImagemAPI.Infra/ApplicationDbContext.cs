@@ -11,13 +11,13 @@ namespace AudioGeraImagemAPI.Infra
             
         }
 
-        public DbSet<Comando> Comandos { get; set; }
+        public DbSet<Criacao> Criacoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new ComandoConfiguration());
+            modelBuilder.ApplyConfiguration(new CriacaoConfiguration());
         }
     }
 }

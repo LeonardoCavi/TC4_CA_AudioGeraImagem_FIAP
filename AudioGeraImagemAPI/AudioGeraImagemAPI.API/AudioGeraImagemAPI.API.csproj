@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -23,8 +23,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AudioGeraImagemAPI.Application\AudioGeraImagemAPI.Application.csproj" />
 		<ProjectReference Include="..\AudioGeraImagemAPI.Infra\AudioGeraImagemAPI.Infra.csproj" />
+		<ProjectReference Include="..\AudioGeraImagemAPI.UseCases\AudioGeraImagemAPI.UseCases.csproj" />
 	</ItemGroup>
 
 </Project>
