@@ -169,22 +169,22 @@ senha personalizada, pois a senha padrão "guest" não funcionará.</br>
 - ➤ <i>OpenAI:SecretKey</i>.: Chave secreta para o consumo das APIS do OpenAI.</br>
 
 <h4 align="left">5. Scripts de Banco de Dados</h4>
-➤ Executar o seguinte script na base de dados.: <a href="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Tabelas/script%20tabelas.sql">Script das Tabelas</a></br>
+➤ Executar o seguinte script na base de dados.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/tree/developer/Documenta%C3%A7%C3%B5es/Tabelas/script%20tabelas.sql">Script das Tabelas</a></br>
 
 <h4 align="left">Iniciando o projeto</h4>
-➤ Realizado todas as configurações, ambos projetos devem ser iniciados. Após esse processo, é possível realizar testes com áudios previamente gravados.: <a href="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/tree/developer/Documenta%C3%A7%C3%B5es/%C3%81udios%20de%20exemplo"> Áudios de Exemplo</a>.</br>
+➤ Realizado todas as configurações, ambos projetos devem ser iniciados. Após esse processo, é possível realizar testes com áudios previamente gravados.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/tree/developer/Documenta%C3%A7%C3%B5es/%C3%81udios%20de%20exemplo"> Áudios de Exemplo</a>.</br>
 ➤ Swagger para testar a API.: <code>https://localhost:[porta]/swagger/index.html</code></br>
 
-<img width="1200" src="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/SwaggerAPI.png"></img></br>
-<img width="1200" src="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/GerandoImagemSwaggerAPI.png"></img></br>
-<img width="1200" src="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/ObtendoImagemSwaggerAPI.png"></img></br>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/SwaggerAPI.png"></img></br>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/GerandoImagemSwaggerAPI.png"></img></br>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Util/ObtendoImagemSwaggerAPI.png"></img></br>
 
 <h4 align="left">Diagrama do banco de dados</h4>
-<img width="1200" src="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Tabelas/diagramaServices.png"></img>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Tabelas/diagramaServices.png"></img>
 
 <h4 align="left">Diagrama de funcionamento dos microsserviços</h4>
-<img width="1200" src="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/consumidor/audio-gera-imagem-worker/Documenta%C3%A7%C3%B5es/Diagramas/TC3.drawio.png"></img>
+<img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Diagramas/TC4.drawio.png"></img>
 
 <h4 align="left">Documentações</h4>
-<a href="https://github.com/talles2512/TC3_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Tabelas/Descritivo%20das%20Tabelas.txt">Descritivo das Tabelas do Projeto</a>.</br>
+<a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Tabelas/Descritivo%20das%20Tabelas.txt">Descritivo das Tabelas do Projeto</a>.</br>
 
