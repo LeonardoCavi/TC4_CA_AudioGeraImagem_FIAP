@@ -13,7 +13,7 @@ disponibilizada para consumo.
 - ➤ AudioGeraImagemWorker</br>
 
 <h2 align="left">Vídeo de Apresentação</h2>
-[EM CONSTRUÇÃO]
+<a href="https://youtu.be/JwXN584B2cg">Apresentação do Projeto</a></br> 
 
 <h2 align="left">Diagrama do Projeto</h2>
 <img width="1200" src="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/Documenta%C3%A7%C3%B5es/Diagramas/Diagrama_integracoes.png"></img></br>
