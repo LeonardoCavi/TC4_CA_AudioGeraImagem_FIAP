@@ -7,7 +7,7 @@ namespace AudioGeraImagemAPI.API.Configurations
     {
         public static void AddRetryPolicy(this IServiceCollection services)
         {
-            services.AddSingleton<AsyncPolicy>(
+            services.AddSingleton<IAsyncPolicy>(
                CreateWaitAndRetryPolicy(new[]
                {
                     TimeSpan.FromSeconds(2),
