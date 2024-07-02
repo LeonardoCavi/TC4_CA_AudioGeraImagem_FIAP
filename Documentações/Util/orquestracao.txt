@@ -1,0 +1,19 @@
+docker build -f . -t talles2512/agi-worker:latest E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemWorker
+
+docker build -f . -t talles2512/agi-api:latest E:\Projects\FIAP\TC4_CA_AudioGeraImagem_FIAP\AudioGeraImagemAPI
+
+
+
+
+kubectl apply -f deployment.yml
+
+kubectl get deployments --all-namespaces=true
+
+kubectl get pods
+
+
+
+
+kubectl apply -f services.yml
+
+kubectl get svc
