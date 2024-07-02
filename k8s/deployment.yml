@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agi
+  template:
+    metadata:
+      labels:
+        app: agi
+    spec:
+      containers:
+      - name: agi-api
+        image: talles2512/agi-api:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      - name: agi-worker
+        image: talles2512/agi-worker:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
