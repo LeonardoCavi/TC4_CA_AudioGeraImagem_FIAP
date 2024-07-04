@@ -16,7 +16,6 @@ namespace AudioGeraImagemWorker.Worker.Configurations
                     .MinimumLevel.Override("Default", LogEventLevel.Fatal)
                     .MinimumLevel.Override("Microsoft", LogEventLevel.Fatal)
                     .MinimumLevel.Override("System", LogEventLevel.Fatal)
-                    .MinimumLevel.Override("MassTransit", LogEventLevel.Debug)
                 .CreateLogger();
         }
 
