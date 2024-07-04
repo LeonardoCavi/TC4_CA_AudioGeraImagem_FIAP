@@ -17,3 +17,10 @@ kubectl get pods
 kubectl apply -f services.yml
 
 kubectl get svc
+
+
+
+
+
+
+az appconfig kv import -s file --format json --path .\appsettings.Production.json --content-type "application/json" --separator : -n agi-app-config
