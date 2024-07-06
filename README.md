@@ -1,3 +1,9 @@
+<h1 align="left">[Tech Challenge 05] - Clusterização do Projeto TC04 - FIAP 2024 - Pós Tech</h1>
+➤ O objetivo deste projeto é dar um passo além do que realizamos no projeto Tech Challenge 04, que rodávamos localmente. Agora, iremos provisionar esses recursos em uma poderosa ferramenta de orquestração de containers no Azure, o AKS (Serviço de Kubernetes do Azure). Nesta nova etapa do projeto, subiremos as imagens do projeto (API e Worker) no Docker Hub, provisionaremos as duas imagens nos pods, provisionaremos a base de dados na nuvem e utilizaremos as configurações no Azure Configuration em vez de armazená-las nos tradicionais "appsettings" da aplicação, tornando-as mais seguras com a utilização também Azure Key Vault.
+
+<h2 align="left">Arquivos Dockerfile</h3>
+A primeira etapa será a criação do arquivo Dockerfile para as aplicações (worker e API). Esse processo pode ser realizado de maneira fácil e automática com a ajuda do Visual Studio, que oferece suporte ao desenvolvedor nessa tarefa. Seguem os links para os Dockerfiles do projeto:
+
 <h1 align="left">[Tech Challenge 04] - Arquitetura Limpa + TDD - Projeto de Microsserviços e comunicações por Mensageria - FIAP 2024 - Pós Tech</h1>
 ➤ O projeto 'Gerador de Imagem por Voz com Microsserviços e Mensageria' consiste em duas soluções que se comunicam por meio de mensageria. 
 Os usuários têm a capacidade de fornecer um áudio, o qual é então transcrito para texto por meio de tecnologias 
