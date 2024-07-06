@@ -7,22 +7,4 @@ docker build -f . -t talles2512/agi-api:latest E:\Projects\FIAP\TC4_CA_AudioGera
 docker push talles2512/agi-api:latest
 
 
-kubectl apply -f deployment.yml
-
-kubectl get deployments --all-namespaces=true
-
-kubectl get pods
-
-
-
-
-kubectl apply -f services.yml
-
-kubectl get svc
-
-
-
-
-
-
 az appconfig kv import -s file --format json --path .\appsettings.Production.json --content-type "application/json" --separator : -n agi-app-config
