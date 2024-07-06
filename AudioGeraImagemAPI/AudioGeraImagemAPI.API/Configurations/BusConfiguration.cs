@@ -11,18 +11,24 @@ namespace AudioGeraImagemAPI.API.Configurations
             var servidor = massTransitParameters["Servidor"] ?? string.Empty;
             var usuario = massTransitParameters["Usuario"] ?? string.Empty;
             var senha = massTransitParameters["Senha"] ?? string.Empty;
+            var connectionString = massTransitParameters["BusConnectionString"] ?? string.Empty;
 
             services.AddMassTransit(cfg =>
             {
-                cfg.UsingRabbitMq((context, cfg) =>
-                {
-                    cfg.Host(servidor, "/", h =>
-                    {
-                        h.Username(usuario);
-                        h.Password(senha);
-                    });
+                //cfg.UsingRabbitMq((context, cfg) =>
+                //{
+                //    cfg.Host(servidor, "/", h =>
+                //    {
+                //        h.Username(usuario);
+                //        h.Password(senha);
+                //    });
 
-                    cfg.ConfigureEndpoints(context);
+                //    cfg.ConfigureEndpoints(context);
+                //});
+
+                cfg.UsingAzureServiceBus((context, cfg) =>
+                {
+                    cfg.Host(connectionString);
                 });
             });
         }

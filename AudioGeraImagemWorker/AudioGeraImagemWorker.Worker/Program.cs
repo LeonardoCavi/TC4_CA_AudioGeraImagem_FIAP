@@ -1,18 +1,24 @@
 using AudioGeraImagemWorker.Worker;
 using AudioGeraImagemWorker.Worker.Configurations;
+using Azure.Identity;
 using System.Diagnostics.CodeAnalysis;
 
 var hostBuilder = Host.CreateDefaultBuilder(args)
-    .ConfigureAppConfiguration((hostingContext, config) =>
+    .ConfigureAppConfiguration((hostBuilderContext, config) =>
     {
-        var env = hostingContext.HostingEnvironment;
-        if (env.IsDevelopment())
+        if (hostBuilderContext.HostingEnvironment.IsProduction())
         {
-            config.AddJsonFile($"appsettings.Development.json", optional: false, reloadOnChange: true);
-        }
-        else
-        {
-            config.AddJsonFile($"appsettings.json", optional: false, reloadOnChange: true);
+            var configuration = config.Build();
+            var connectionString = configuration["AppConfigurationConnectionString"];
+
+            config.AddAzureAppConfiguration(options =>
+            {
+                options.Connect(connectionString)
+                        .ConfigureKeyVault(kv =>
+                        {
+                            kv.SetCredential(new DefaultAzureCredential());
+                        });
+            });
         }
     })
     .ConfigureServices((hostContext, services) =>

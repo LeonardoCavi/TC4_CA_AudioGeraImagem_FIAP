@@ -16,18 +16,38 @@ namespace AudioGeraImagemWorker.Worker.Configurations
             var servidor = massTransitParameters["Servidor"] ?? string.Empty;
             var usuario = massTransitParameters["Usuario"] ?? string.Empty;
             var senha = massTransitParameters["Senha"] ?? string.Empty;
+            var connectionString = massTransitParameters["BusConnectionString"] ?? string.Empty;
 
             services.AddMassTransit(x =>
             {
                 x.AddDelayedMessageScheduler();
 
-                x.UsingRabbitMq((context, cfg) =>
+                //x.UsingRabbitMq((context, cfg) =>
+                //{
+                //    cfg.Host(servidor, "/", h =>
+                //    {
+                //        h.Username(usuario);
+                //        h.Password(senha);
+                //    });
+
+                //    cfg.UseDelayedMessageScheduler();
+
+                //    cfg.ReceiveEndpoint(fila, e =>
+                //    {
+                //        e.ConfigureConsumer<NovaCriacaoConsumer>(context);
+                //    });
+
+                //    cfg.ReceiveEndpoint(filaRetentativa, e =>
+                //    {
+                //        e.ConfigureConsumer<RetentativaCriacaoConsumer>(context);
+                //    });
+
+                //    cfg.ConfigureEndpoints(context);
+                //});
+
+                x.UsingAzureServiceBus((context, cfg) =>
                 {
-                    cfg.Host(servidor, "/", h =>
-                    {
-                        h.Username(usuario);
-                        h.Password(senha);
-                    });
+                    cfg.Host(connectionString);
 
                     cfg.UseDelayedMessageScheduler();
 
@@ -40,8 +60,6 @@ namespace AudioGeraImagemWorker.Worker.Configurations
                     {
                         e.ConfigureConsumer<RetentativaCriacaoConsumer>(context);
                     });
-
-                    cfg.ConfigureEndpoints(context);
                 });
 
                 x.AddConsumer<NovaCriacaoConsumer>();
