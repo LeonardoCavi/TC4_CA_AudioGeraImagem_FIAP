@@ -2,7 +2,24 @@
 ➤ O objetivo deste projeto é dar um passo além do que realizamos no projeto Tech Challenge 04, que rodávamos localmente. Agora, iremos provisionar esses recursos em uma poderosa ferramenta de orquestração de containers no Azure, o AKS (Serviço de Kubernetes do Azure). Nesta nova etapa do projeto, subiremos as imagens do projeto (API e Worker) no Docker Hub, provisionaremos as duas imagens nos pods, provisionaremos a base de dados na nuvem e utilizaremos as configurações no Azure Configuration em vez de armazená-las nos tradicionais "appsettings" da aplicação, tornando-as mais seguras com a utilização também Azure Key Vault.
 
 <h2 align="left">Arquivos Dockerfile</h3>
-A primeira etapa será a criação do arquivo Dockerfile para as aplicações (worker e API). Esse processo pode ser realizado de maneira fácil e automática com a ajuda do Visual Studio, que oferece suporte ao desenvolvedor nessa tarefa. Seguem os links para os Dockerfiles do projeto:
+➤ A primeira etapa será a criação do arquivo Dockerfile para as aplicações (worker e API). Esse processo pode ser realizado de maneira fácil e automática com a ajuda do Visual Studio, que oferece suporte ao desenvolvedor nessa tarefa. Seguem os links para os Dockerfiles do projeto:</br>
+- ➤ <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/AudioGeraImagemAPI/AudioGeraImagemAPI.API/Dockerfile">API - DockerFile</a></br>
+- ➤ <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/AudioGeraImagemWorker/AudioGeraImagemWorker.Worker/Dockerfile">Worker - DockerFile</a></br>
+
+<h2 align="left">Provisionar imagens dos projetos no Docker Hub</h3>
+➤ Primeiramente, é importante criar uma conta e os repositórios no Docker Hub. A seguir, apresentamos alguns comandos úteis para facilitar a publicação das imagens. (OBS.: Os comandos fornecidos devem ser adaptados para cada ambiente).</br>
+- ➤ Criando a imagem do Worker.: <code>docker build -f . -t sua_conta/agi-worker:latest caminho_do_worker</code><br>
+- ➤ Subindo a imagem do Worker.: <code>docker push sua_conta/agi-worker:latest</code><br>
+- ➤ Criando a imagem da API.: <code>docker build -f . -t sua_conta/agi-api:latest caminha_do_worker</code><br>
+- ➤ Subindo a imagem da API.: <code>docker push sua_conta/agi-api:latest</code><br>
+
+<h2 align="left">Configurando o arquivo YAML que iremos utilizan no Deploy do AKS</h3>
+- ➤ Deploy.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/k8s/deployment.yml">deployment.yml</a></br>
+- ➤ Service.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/k8s/services.yml">service.yml</a></br>
+
+<h2 align="left">Preparando e Configurando o Recursos no Azure</h3>
+➤ Para ilustrar esta etapa, disponibilizaremos um vídeo demonstrando os passos descritos anteriormente e todas as etapas necessárias no Azure para implantar a aplicação corretamente no AKS.</br>
+- ➤ [VÍDEO EM ANDAMENTO...]
 
 <h1 align="left">[Tech Challenge 04] - Arquitetura Limpa + TDD - Projeto de Microsserviços e comunicações por Mensageria - FIAP 2024 - Pós Tech</h1>
 ➤ O projeto 'Gerador de Imagem por Voz com Microsserviços e Mensageria' consiste em duas soluções que se comunicam por meio de mensageria. 
