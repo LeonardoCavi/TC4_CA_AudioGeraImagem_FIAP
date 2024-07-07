@@ -10,16 +10,16 @@
 ➤ Primeiramente, é importante criar uma conta e os repositórios no Docker Hub. A seguir, apresentamos alguns comandos úteis para facilitar a publicação das imagens. (OBS.: Os comandos fornecidos devem ser adaptados para cada ambiente).</br>
 - ➤ Criando a imagem do Worker.: <code>docker build -f . -t sua_conta/agi-worker:latest caminho_do_worker</code><br>
 - ➤ Subindo a imagem do Worker.: <code>docker push sua_conta/agi-worker:latest</code><br>
-- ➤ Criando a imagem da API.: <code>docker build -f . -t sua_conta/agi-api:latest caminha_do_worker</code><br>
+- ➤ Criando a imagem da API.: <code>docker build -f . -t sua_conta/agi-api:latest caminho_da_api</code><br>
 - ➤ Subindo a imagem da API.: <code>docker push sua_conta/agi-api:latest</code><br>
 
-<h2 align="left">Configurando o arquivo YAML que iremos utilizan no Deploy do AKS</h3>
+<h2 align="left">Configurando o arquivo YAML que iremos utilizar no Deploy do AKS</h3>
 - ➤ Deploy.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/k8s/deployment.yml">deployment.yml</a></br>
 - ➤ Service.: <a href="https://github.com/LeonardoCavi/TC4_CA_AudioGeraImagem_FIAP/blob/developer/k8s/services.yml">service.yml</a></br>
 
 <h2 align="left">Preparando e Configurando o Recursos no Azure</h3>
 ➤ Para ilustrar esta etapa, disponibilizaremos um vídeo demonstrando os passos descritos anteriormente e todas as etapas necessárias no Azure para implantar a aplicação corretamente no AKS.</br>
-- ➤ [VÍDEO EM ANDAMENTO...]
+- ➤ <a href="https://www.youtube.com/watch?v=VIwKsCVCfgE">[Tech Challenge 05] - Clusterização do Projeto TC04 - FIAP 2024 - Pós Tech</a></br> 
 
 <h1 align="left">[Tech Challenge 04] - Arquitetura Limpa + TDD - Projeto de Microsserviços e comunicações por Mensageria - FIAP 2024 - Pós Tech</h1>
 ➤ O projeto 'Gerador de Imagem por Voz com Microsserviços e Mensageria' consiste em duas soluções que se comunicam por meio de mensageria. 
